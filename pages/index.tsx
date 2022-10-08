@@ -34,7 +34,7 @@ export default function LandingPage(props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        brand="Tubus Capital"
+        brand=""
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -46,19 +46,11 @@ export default function LandingPage(props) {
       <Parallax filter responsive image="/img/landing-bg.jpg">
         <div className={classes.container}>
           <GridContainer>
-            <GridItem xs={12} sm={12} md={6}>
+            <GridItem xs={12} sm={12} md={12}>
               <h1 className={classes.title}>Tubus Capital</h1>
               <h4>
-                Your story starts here.
-              </h4>
-              <br />
-              <Button  
-              color="info"              
-                size="lg"                                 
-              >
-               
-                Contact us
-              </Button>
+              A FLORIDA-BASED GLOBAL REAL ESTATE DEVELOPMENT AND CAPITAL INVESTMENT FIRM ENGAGED IN ACQUISITIONS, DEVELOPMENT AND REPOSITIONING OF RESIDENTIAL AND COMMERCIAL PROPERTIES.
+              </h4>            
             </GridItem>
           </GridContainer>
         </div>

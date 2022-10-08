@@ -8,7 +8,10 @@ const landingPageStyle = {
   },
   title: {
     ...title,
-    display: "inline-block",
+    display: "flex",
+    justifyContent: 'center',
+    fontSize: '72px',
+    textTransform:'uppercase',
     position: "relative",
     marginTop: "30px",
     minHeight: "32px",
