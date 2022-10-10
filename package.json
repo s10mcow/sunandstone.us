@@ -54,7 +54,7 @@
     "rehype-highlight": "^5.0.2",
     "remark-frontmatter": "^4.0.1",
     "sass": "^1.54.9",
-    "styled-components": "^5.3.5",
+    "styled-components": "^5.3.6",
     "webpack": "^5.74.0"
   },
   "peerDependencies": {
