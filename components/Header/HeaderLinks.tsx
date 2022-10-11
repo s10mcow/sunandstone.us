@@ -22,10 +22,10 @@ import styles from "../../styles/jss/nextjs-material-kit/components/headerLinksS
 
 const useStyles = makeStyles(styles);
 
-export default function   HeaderLinks(props) {
+export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
-    <List className={classes.list}>                    
+    <List className={classes.list}>
       <ListItem className={classes.listItem}>
         {/*<Tooltip title="Delete">
           <IconButton aria-label="Delete">
@@ -48,7 +48,7 @@ export default function   HeaderLinks(props) {
           </Button>
         </Tooltip> */}
       </ListItem>
-      <ListItem className={classes.listItem}>
+      {/* <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-facebook"
           title="Follow us on facebook"
@@ -81,7 +81,7 @@ export default function   HeaderLinks(props) {
             <i className={classes.socialIcons + " fab fa-instagram"} />
           </Button>
         </Tooltip>
-      </ListItem>
+      </ListItem> */}
     </List>
   );
 }

@@ -39,7 +39,7 @@ export default function LandingPage(props) {
         fixed
         changeColorOnScroll={{
           height: 400,
-          color: "white"
+          color: "white",
         }}
         {...rest}
       />
@@ -49,8 +49,10 @@ export default function LandingPage(props) {
             <GridItem xs={12} sm={12} md={12}>
               <h1 className={classes.title}>Tubus Capital</h1>
               <h4>
-              A FLORIDA-BASED GLOBAL REAL ESTATE DEVELOPMENT AND CAPITAL INVESTMENT FIRM ENGAGED IN ACQUISITIONS, DEVELOPMENT AND REPOSITIONING OF RESIDENTIAL AND COMMERCIAL PROPERTIES.
-              </h4>            
+                A FLORIDA-BASED GLOBAL REAL ESTATE DEVELOPMENT AND CAPITAL
+                INVESTMENT FIRM ENGAGED IN ACQUISITIONS, DEVELOPMENT AND
+                REPOSITIONING OF RESIDENTIAL AND COMMERCIAL PROPERTIES.
+              </h4>
             </GridItem>
           </GridContainer>
         </div>
@@ -58,7 +60,7 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />
-          <TeamSection />
+          {/* <TeamSection /> */}
           <WorkSection />
         </div>
       </div>

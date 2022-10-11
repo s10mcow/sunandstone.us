@@ -13,6 +13,9 @@ import Button from "../../components/CustomButtons/Button";
 import styles from "../../styles/jss/nextjs-material-kit/pages/landingPageSections/workStyle";
 
 const Email = styled.a`
+  display: flex;
+  justify-content: center;
+
   cursor: pointer;
 `;
 
