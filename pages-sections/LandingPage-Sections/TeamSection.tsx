@@ -34,7 +34,7 @@ export default function TeamSection() {
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
                 <img
-                  src="/img/faces/kendall.jpg"
+                  src="/img/faces/erica.jpg"
                   alt="..."
                   className={imageClasses}
                 />
@@ -63,7 +63,7 @@ export default function TeamSection() {
               </CardFooter>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={12} md={6}>
+          {/* <GridItem xs={12} sm={12} md={6}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
                 <img
@@ -73,14 +73,14 @@ export default function TeamSection() {
                 />
               </GridItem>
               <h4 className={classes.cardTitle}>Sanne</h4>
-              {/* <CardBody>
+              <CardBody>
                 <p className={classes.description}>
                   You can write here details about one of your team members. You
                   can give more details about what they do. Feel free to add
                   some <a href="#pablo">links</a> for people to be able to
                   follow them outside the site.
                 </p>
-              </CardBody> */}
+              </CardBody>
               <CardFooter className={classes.justifyCenter}>
                 <Button
                   link
@@ -94,8 +94,8 @@ export default function TeamSection() {
                 </Button>
               </CardFooter>
             </Card>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={6}>
+          </GridItem> */}
+          {/* <GridItem xs={12} sm={12} md={6}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
                 <img
@@ -105,14 +105,14 @@ export default function TeamSection() {
                 />
               </GridItem>
               <h4 className={classes.cardTitle}>Sten</h4>
-              {/* <CardBody>
+              <CardBody>
                 <p className={classes.description}>
                   You can write here details about one of your team members. You
                   can give more details about what they do. Feel free to add
                   some <a href="#pablo">links</a> for people to be able to
                   follow them outside the site.
                 </p>
-              </CardBody> */}
+              </CardBody>
               <CardFooter className={classes.justifyCenter}>
                 <Button
                   link
@@ -126,12 +126,12 @@ export default function TeamSection() {
                 </Button>
               </CardFooter>
             </Card>
-          </GridItem>
+          </GridItem> */}
           <GridItem xs={12} sm={12} md={6}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
                 <img
-                  src="/img/faces/christian.jpg"
+                  src="/img/faces/matt.jpg"
                   alt="..."
                   className={imageClasses}
                 />

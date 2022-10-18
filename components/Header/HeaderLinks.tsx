@@ -27,12 +27,25 @@ export default function HeaderLinks(props) {
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        {/*<Tooltip title="Delete">
+        <Tooltip
+          id="blog"
+          title="articles"
+          placement={"top"}
+          classes={{ tooltip: classes.tooltip }}
+        >
+          <Button href="/blog" color="transparent" className={classes.navLink}>
+            <i className={classes.socialIcons + " fab fa-newspaper"} />
+            Articles
+          </Button>
+        </Tooltip>
+      </ListItem>
+      {/* <ListItem className={classes.listItem}>
+        <Tooltip title="Delete">
           <IconButton aria-label="Delete">
             <DeleteIcon />
           </IconButton>
-        </Tooltip>*/}
-        {/* <Tooltip
+        </Tooltip>
+        <Tooltip
           id="instagram-twitter"
           title="Follow us on twitter"
           placement={"top"}
@@ -46,8 +59,8 @@ export default function HeaderLinks(props) {
           >
             <i className={classes.socialIcons + " fab fa-twitter"} />
           </Button>
-        </Tooltip> */}
-      </ListItem>
+        </Tooltip>
+      </ListItem> */}
       {/* <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-facebook"
