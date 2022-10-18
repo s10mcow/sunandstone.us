@@ -3,7 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
+import styled from "styled-components";
 // @material-ui/icons
 
 // core components
@@ -26,6 +26,25 @@ const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
+const Title = styled.h1`
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 96px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+`;
+
+const Description = styled.h4`
+  font-size: 22px;
+  color: #ffffff;
+  line-height: 1.5;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: normal;
+`;
+
 export default function LandingPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
@@ -47,12 +66,12 @@ export default function LandingPage(props) {
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={12}>
-              <h1 className={classes.title}>Tubus Capital</h1>
-              <h4>
+              <Title>Tubus Capital</Title>
+              <Description>
                 A FLORIDA-BASED GLOBAL REAL ESTATE DEVELOPMENT AND CAPITAL
                 INVESTMENT FIRM ENGAGED IN ACQUISITIONS, DEVELOPMENT AND
                 REPOSITIONING OF RESIDENTIAL AND COMMERCIAL PROPERTIES.
-              </h4>
+              </Description>
             </GridItem>
           </GridContainer>
         </div>
