@@ -51,7 +51,7 @@ export default function BlogPage(props: { posts: PostType[] }) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <GridContainer alignItems="center" justifyContent="center">
-          <GridItem xs={6}>
+          <GridItem xs={10}>
             <div>
               {posts.map((post, index) => (
                 <BlogCard post={post} key={index} />

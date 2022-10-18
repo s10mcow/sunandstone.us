@@ -48,7 +48,8 @@ export const PostPage = (props: { frontMatter; mdxSource }) => {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <Box
           sx={{
-            p: 24,
+            maxWidth: 1000,
+            p: 4,
           }}
         >
           <div>
