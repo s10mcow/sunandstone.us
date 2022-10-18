@@ -65,6 +65,7 @@ export default function HeaderLinks(props) {
           </Button>
         </Tooltip>
       </ListItem>
+       */}
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-tooltip"
@@ -81,7 +82,7 @@ export default function HeaderLinks(props) {
             <i className={classes.socialIcons + " fab fa-instagram"} />
           </Button>
         </Tooltip>
-      </ListItem> */}
+      </ListItem>
     </List>
   );
 }

@@ -29,7 +29,7 @@ export default function BlogPage(props: { posts: PostType[] }) {
   return (
     <div>
       <Header
-        brand="NextJS Material Kit"
+        brand="Tubus Capital"
         rightLinks={<HeaderLinks />}
         fixed
         color="transparent"
@@ -38,12 +38,12 @@ export default function BlogPage(props: { posts: PostType[] }) {
           color: "white",
         }}
       />
-      <Parallax image="/img/nextjs_header.jpg">
+      <Parallax image="/img/west-coast-pt.jpg">
         <div className={classes.container}>
           <GridContainer>
             <GridItem>
               <div className={classes.brand}>
-                <h1 className={classes.title}>NextJS Blog.</h1>
+                <h1 className={classes.title}>Tubus Capital Blog</h1>
               </div>
             </GridItem>
           </GridContainer>
@@ -60,7 +60,7 @@ export default function BlogPage(props: { posts: PostType[] }) {
           </GridItem>
         </GridContainer>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
