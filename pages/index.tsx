@@ -26,13 +26,18 @@ const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
-const Title = styled.h1`
+const Title = styled.div`
   font-family: Montserrat;
   font-weight: bold;
   font-size: 96px;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
+  line-height: 1;
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 72px;
+  }
 `;
 
 const Description = styled.h4`
@@ -64,19 +69,15 @@ export default function LandingPage(props) {
       />
       <Parallax filter responsive image="/img/landing-bg.jpg">
         <div className={classes.container}>
-          <GridContainer>
-            <GridItem xs={12} sm={12} md={12}>
-              <Title>Tubus Capital</Title>
-              <Description>
-                A FLORIDA-BASED GLOBAL REAL ESTATE DEVELOPMENT AND CAPITAL
-                INVESTMENT FIRM ENGAGED IN ACQUISITIONS, DEVELOPMENT AND
-                REPOSITIONING OF RESIDENTIAL AND COMMERCIAL PROPERTIES.
-              </Description>
-            </GridItem>
-          </GridContainer>
+          <Title>Tubus Capital</Title>
+          <Description>
+            A FLORIDA-BASED GLOBAL REAL ESTATE DEVELOPMENT AND CAPITAL
+            INVESTMENT FIRM ENGAGED IN ACQUISITIONS, DEVELOPMENT AND
+            REPOSITIONING OF RESIDENTIAL AND COMMERCIAL PROPERTIES.
+          </Description>
         </div>
       </Parallax>
-      <div className={classNames(classes.main, classes.mainRaised)}>
+      <div className={classNames(classes.main)}>
         <div className={classes.container}>
           <ProductSection />
           <TeamSection />

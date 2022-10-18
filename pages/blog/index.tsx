@@ -10,6 +10,7 @@ import styles from "../../styles/jss/nextjs-material-kit/pages/components";
 import Footer from "../../components/Footer/Footer";
 import classNames from "classnames";
 import BlogCard from "../../components/Blog/BlogCard";
+import styled from "styled-components";
 
 const useStyles = makeStyles(styles);
 
@@ -21,6 +22,32 @@ type PostType = {
   slug: string;
 };
 
+const Title = styled.div`
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 96px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  line-height: 1;
+  color: #ffffff;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 72px;
+  }
+`;
+
+const Description = styled.h4`
+  font-size: 22px;
+  color: #ffffff;
+  line-height: 1.5;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: normal;
+`;
+
 export default function BlogPage(props: { posts: PostType[] }) {
   const classes = useStyles();
 
@@ -30,7 +57,7 @@ export default function BlogPage(props: { posts: PostType[] }) {
     <div>
       <Header
         brand="Tubus Capital"
-        rightLinks={<HeaderLinks />}
+        // rightLinks={<HeaderLinks />}
         fixed
         color="transparent"
         changeColorOnScroll={{
@@ -40,13 +67,7 @@ export default function BlogPage(props: { posts: PostType[] }) {
       />
       <Parallax image="/img/west-coast-pt.jpg">
         <div className={classes.container}>
-          <GridContainer>
-            <GridItem>
-              <div className={classes.brand}>
-                <h1 className={classes.title}>Tubus Capital Blog</h1>
-              </div>
-            </GridItem>
-          </GridContainer>
+          <Title>The Articles</Title>
         </div>
       </Parallax>
       <div className={classNames(classes.main)}>
