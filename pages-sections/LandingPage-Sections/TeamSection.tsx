@@ -53,7 +53,7 @@ export default function TeamSection() {
                 <Button
                   link
                   target="_blank"
-                  href="https://www.linkedin.com/in/mattheus-corpening-85310a210"
+                  href="https://www.linkedin.com/in/erica-corpening-8a9111238"
                   justIcon
                   color="transparent"
                   className={classes.margin5}
