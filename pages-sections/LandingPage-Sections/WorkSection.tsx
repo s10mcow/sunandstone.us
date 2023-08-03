@@ -58,13 +58,13 @@ export default function WorkSection() {
               className={classes.description}
               href="mailto:hello@tubuscapital.com"
             >
-              hello@tubuscapital.com
+              hello@sunandstone.us
             </Email>
-            <PhoneLine className={classes.description} href="tel:904-404-9199">
-              904-404-9199
+            <PhoneLine className={classes.description} href="tel:763-218-0183">
+              763-218-0183
             </PhoneLine>
             <AddressLine className={classes.description}>
-              PO Box 263{" "}
+              PO Box 1242{" "}
             </AddressLine>
             <AddressLine className={classes.description}>
               Flagler Beach, FL 32136

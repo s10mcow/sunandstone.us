@@ -59,7 +59,7 @@ export default function LandingPage(props) {
         color="transparent"
         routes={dashboardRoutes}
         brand=""
-        rightLinks={<HeaderLinks />}
+        // rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
           height: 400,
@@ -69,7 +69,7 @@ export default function LandingPage(props) {
       />
       <Parallax filter responsive image="/img/landing-bg.jpg">
         <div className={classes.container}>
-          <Title>Tubus Capital</Title>
+          <Title>Sun & Stone</Title>
           <Description>
             A FLORIDA-BASED GLOBAL REAL ESTATE DEVELOPMENT AND CAPITAL
             INVESTMENT FIRM ENGAGED IN ACQUISITIONS, DEVELOPMENT AND
@@ -80,7 +80,7 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main)}>
         <div className={classes.container}>
           <ProductSection />
-          <TeamSection />
+          {/* <TeamSection /> */}
           <WorkSection />
         </div>
       </div>

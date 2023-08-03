@@ -3,7 +3,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 // @material-ui/icons
-import { Apartment, Home, Hotel } from '@material-ui/icons';
+import { Apartment, Home, Hotel, Landscape } from "@material-ui/icons";
 // core components
 import GridContainer from "../../components/Grid/GridContainer";
 import GridItem from "../../components/Grid/GridItem";
@@ -21,7 +21,8 @@ export default function ProductSection() {
         <GridItem xs={12} sm={12} md={8}>
           <h2 className={classes.title}>What we do</h2>
           <h5 className={classes.description}>
-           Tubus Capital focuses on investments through real estate. We have three areas of concern, multi-family, lodges, and short term rentals. 
+            Sun and Stone focuses on investments through real estate. We have
+            three areas of concern, multi-family, land, and short term rentals.
           </h5>
         </GridItem>
       </GridContainer>
@@ -37,12 +38,10 @@ export default function ProductSection() {
             />
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
-
-            
             <InfoArea
-              title="Lodges"
-              description="Lodges and motels that are located in exotic locations."
-              icon={Hotel}
+              title="Land"
+              description="Land located in the USA."
+              icon={Landscape}
               iconColor="danger"
               vertical
             />
@@ -56,7 +55,6 @@ export default function ProductSection() {
               vertical
             />
           </GridItem>
-          
         </GridContainer>
       </div>
     </div>
