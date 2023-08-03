@@ -73,7 +73,7 @@ export default function LandingPage(props) {
           <Description>
             A FLORIDA-BASED GLOBAL REAL ESTATE DEVELOPMENT AND CAPITAL
             INVESTMENT FIRM ENGAGED IN ACQUISITIONS, DEVELOPMENT AND
-            REPOSITIONING OF RESIDENTIAL AND COMMERCIAL PROPERTIES.
+            REPOSITIONING OF LAND, RESIDENTIAL, AND COMMERCIAL PROPERTIES.
           </Description>
         </div>
       </Parallax>
