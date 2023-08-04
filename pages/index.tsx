@@ -55,7 +55,7 @@ export default function LandingPage(props) {
   const { ...rest } = props;
   return (
     <div>
-      <Header
+      {/* <Header
         color="transparent"
         routes={dashboardRoutes}
         brand=""
@@ -66,7 +66,7 @@ export default function LandingPage(props) {
           color: "white",
         }}
         {...rest}
-      />
+      /> */}
       <Parallax filter responsive image="/img/landing-bg.jpg">
         <div className={classes.container}>
           <Title>Sun & Stone</Title>
