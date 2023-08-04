@@ -61,7 +61,10 @@ export default function WorkSection() {
               hello@sunandstone.us
             </Email>
             <PhoneLine className={classes.description} href="tel:904-325-6275">
-              904-325-6275
+              Phone: 904-325-6275
+            </PhoneLine>
+            <PhoneLine className={classes.description} href="tel:904-325-6275">
+              Fax: 386-309-2342
             </PhoneLine>
             <AddressLine className={classes.description}>
               PO Box 1242{" "}
