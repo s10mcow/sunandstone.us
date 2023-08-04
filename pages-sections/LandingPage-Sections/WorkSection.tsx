@@ -60,8 +60,8 @@ export default function WorkSection() {
             >
               hello@sunandstone.us
             </Email>
-            <PhoneLine className={classes.description} href="tel:763-218-0183">
-              763-218-0183
+            <PhoneLine className={classes.description} href="tel:904-325-6275">
+              904-325-6275
             </PhoneLine>
             <AddressLine className={classes.description}>
               PO Box 1242{" "}
