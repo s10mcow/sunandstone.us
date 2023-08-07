@@ -40,15 +40,17 @@ export default function TeamSection() {
                 />
               </GridItem>
               <h4 className={classes.cardTitle}>Sten Muchow</h4>
-              {/* <CardBody>
+              <CardBody>
                 <p className={classes.description}>
-                  You can write here details about one of your team members. You
-                  can give more details about what they do. Feel free to add
-                  some <a href="#pablo">links</a> for people to be able to
-                  follow them outside the site.
-                
+                  Sten is a real estate investor and entrepreneur. Having
+                  studied computer science and math at school, he leveraged his
+                  knowledge to build a real estate investment business. He has
+                  been investing in real estate since 2016. He is passionate
+                  about helping others achieve financial freedom through real
+                  estate investing. He is also a big believer in the power of
+                  community and is excited to be a part of the Sun & Stone team.
                 </p>
-              </CardBody> */}
+              </CardBody>
               <CardFooter className={classes.justifyCenter}>
                 <Button
                   link
