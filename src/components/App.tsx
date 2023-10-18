@@ -5,11 +5,9 @@ import { useAppErrorHandlers } from "../services/ErrorMessaging.ts";
 import AppRouter from "./routes/AppRouter.tsx";
 import { AppProviders } from "./AppProviders.tsx";
 
-// See main.tsx for providers
-
 export default function App() {
   const {
-    isLoading,
+    isPending,
     mutate: authenticate,
     error: authenticateError,
   } = useAuthenticationMutation();
@@ -23,7 +21,7 @@ export default function App() {
 
   useEffect(() => authenticate(), []);
 
-  if (isLoading) return <FullScreenCircularProgress />;
+  if (isPending) return <FullScreenCircularProgress />;
 
   return (
     <AppProviders>
