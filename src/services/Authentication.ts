@@ -57,6 +57,6 @@ export async function submitLogin({ email }: { email: string }) {
  * Check for an existing user and set the authenticated user if one exists
  */
 export async function authenticate() {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   // setAuthenticatedUser({...mockAuthenticatedUser})
 }

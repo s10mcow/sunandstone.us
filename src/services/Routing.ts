@@ -8,7 +8,7 @@ export function useAppNavigation() {
   const navigate = useNavigate();
 
   return {
-    toHome: () => navigate("/home"),
+    toHome: () => navigate("/ "),
   };
 }
 

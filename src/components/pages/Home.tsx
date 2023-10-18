@@ -38,7 +38,7 @@ export function Home() {
           {isLoadingPosts && <CircularProgress />}
           {posts?.map((post) => (
             <Grid xs={6} key={post.id}>
-              <Paper sx={{ minWidth: 200, minHeight: 400, p: 4 }}>
+              <Paper sx={{ minWidth: 200, minHeight: 200, p: 4 }}>
                 <Typography variant="h4">{post.title}</Typography>
                 <Typography variant="body1">
                   {post?.body?.substring(0, 50)}

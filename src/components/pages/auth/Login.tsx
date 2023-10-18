@@ -32,7 +32,7 @@ export function Login() {
   const {
     error: submitLoginError,
     mutate: submitLoginMutate,
-    isLoading: isSubmitting,
+    isPending: isSubmitting,
     isSuccess: isLoginSuccess,
   } = useMutation({
     mutationFn: submitLogin,
