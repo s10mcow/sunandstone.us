@@ -1,0 +1,64 @@
+name: PR Review
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+concurrency:
+  group: ${{ github.repository_id }}-pr-${{ github.event.pull_request.id }}
+
+jobs:
+  build:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: "yarn"
+          node-version-file: ".nvmrc"
+      - name: Install Dependencies
+        run: yarn
+      - name: Build Web App
+        run: yarn build
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
+      - name: Install Pulumi
+        uses: pulumi/actions@v4
+      - name: Ensure stack is unlocked
+        run: |
+          pulumi login s3://stockitrf-pulumi
+          (
+            pulumi stack ls | grep "pr-${{ github.event.pull_request.id }}"
+            if [ $? -eq 0 ]; then
+              pulumi cancel -s "pr-${{ github.event.pull_request.id }}" -y --non-interactive
+            fi
+          ) || true
+        working-directory: ./infrastructure
+        env:
+          PULUMI_CONFIG_PASSPHRASE_FILE: "./.passphrase"
+      - name: Deploy Infrastructure
+        uses: pulumi/actions@v4
+        with:
+          cloud-url: s3://stockitrf-pulumi
+          command: up
+          comment-on-pr: true
+          refresh: true
+          secrets-provider: "file://${{ github.workspace }}/infrastructure/.passphrase"
+          stack-name: "pr-${{ github.event.pull_request.id }}"
+          upsert: true
+          work-dir: ./infrastructure
+        env:
+          PULUMI_CONFIG_PASSPHRASE_FILE: "./.passphrase"
+      - name: Invalidate Cache
+        uses: chetan/invalidate-cloudfront-action@master
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_REGION: "us-east-1"
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          DISTRIBUTION: ${{ steps.pulumi.outputs.cfDistributionId }}
+          PATHS: "/*"

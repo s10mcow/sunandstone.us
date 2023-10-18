@@ -1,0 +1,100 @@
+name: Deploy Environment
+
+on:
+  push:
+    branches:
+      - main
+      - next
+  release:
+    types:
+      - published
+
+concurrency:
+  group: ${{ github.repository_id }}-${{ github.ref_name }}
+
+jobs:
+  deploy:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: "yarn"
+          node-version-file: ".nvmrc"
+      - name: Set Deployment Environment
+        run: |
+          echo "REF_SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
+          if [[ "$GITHUB_REF_TYPE" == "tag" ]]; then
+            echo "PULUMI_STACK=prod" >> "$GITHUB_ENV"
+          elif [[ "$GITHUB_BRANCH" == "main" ]]; then
+            echo "PULUMI_STACK=qa" >> "$GITHUB_ENV"
+          elif [[ "$GITHUB_BRANCH" == "next" ]]; then
+            echo "PULUMI_STACK=dev" >> "$GITHUB_ENV"
+          else
+            echo "Unsupported environment $BRANCH_NAME" >&2
+            exit 1
+          fi
+        env:
+          GITHUB_BRANCH: ${{ github.ref_name }}
+          GITHUB_REF_TYPE: ${{ github.ref_type }}
+      - name: Install Dependencies
+        run: yarn
+      - name: Build Web App
+        run: |
+          if [[ "$GITHUB_REF_TYPE" == "tag" ]]; then
+            yarn build --mode=production
+          elif [[ "$GITHUB_BRANCH" == "main" ]]; then
+            yarn build --mode=qa
+          elif [[ "$GITHUB_BRANCH" == "next" ]]; then
+            yarn build --mode=development
+          else
+            echo "Unsupported build environment $BRANCH_NAME" >&2
+            exit 1
+          fi
+        env:
+          GITHUB_BRANCH: ${{ github.ref_name }}
+          GITHUB_REF_TYPE: ${{ github.ref_type }}
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
+      - name: Install Pulumi
+        uses: pulumi/actions@v4
+      - name: Ensure stack is unlocked
+        run: |
+          pulumi login s3://stockitrf-pulumi
+          (
+            pulumi stack ls | grep "${{ env.PULUMI_STACK }}"
+            if [ $? -eq 0 ]; then
+              pulumi cancel -s "${{ env.PULUMI_STACK }}" -y --non-interactive
+            fi
+          ) || true
+        working-directory: ./infrastructure
+        env:
+          PULUMI_CONFIG_PASSPHRASE_FILE: "./.passphrase"
+      - name: Deploy Infrastructure
+        uses: pulumi/actions@v4
+        id: pulumi
+        with:
+          cloud-url: s3://stockitrf-pulumi
+          command: up
+          comment-on-pr: true
+          refresh: true
+          secrets-provider: "file://${{ github.workspace }}/infrastructure/.passphrase"
+          stack-name: ${{ env.PULUMI_STACK }}
+          upsert: true
+          work-dir: ./infrastructure
+        env:
+          PULUMI_CONFIG_PASSPHRASE_FILE: "./.passphrase"
+      - name: Invalidate Cache
+        uses: chetan/invalidate-cloudfront-action@master
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_REGION: "us-east-1"
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          DISTRIBUTION: ${{ steps.pulumi.outputs.cfDistributionId }}
+          PATHS: "/*"
