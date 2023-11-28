@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
 import React from "react";
-import { logger } from "./Logger.ts";
+import { logger } from "./Logger";
 import { useSnackbar } from "notistack";
 
 const UNKNOWN_ERROR = "An unknown error has occurred. Please try again later.";

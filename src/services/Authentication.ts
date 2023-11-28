@@ -2,8 +2,8 @@ import { useMutation } from "@tanstack/react-query";
 
 import { atom, useRecoilValue } from "recoil";
 import { getRecoil, resetRecoil, setRecoil } from "recoil-nexus";
-import { mockAuthenticatedUser } from "./__mocks__/Authentication.ts";
-import { logger } from "./Logger.ts";
+import { mockAuthenticatedUser } from "./__mocks__/Authentication";
+import { logger } from "./Logger";
 
 type AuthenticatedUser = {
   firstName: string;

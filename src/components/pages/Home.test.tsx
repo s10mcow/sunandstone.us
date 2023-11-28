@@ -1,7 +1,7 @@
 import { test, describe, vi, expect } from "vitest";
-import { Home } from "./Home.tsx";
-import * as Authentication from "../../services/Authentication.ts";
-import { fireEvent, renderWithProviders } from "../../testing/Testing.tsx";
+import { Home } from "./Home";
+import * as Authentication from "../../services/Authentication";
+import { fireEvent, renderWithProviders } from "../../testing/Testing";
 
 describe("Home", () => {
   test("should call the logout function when the logout button is clicked", async () => {
