@@ -1,4 +1,4 @@
-import api from "./Api.ts";
+import api from "./Api";
 import { useQuery } from "@tanstack/react-query";
 
 type Post = { id: number; title: string; body: string; userId: number };

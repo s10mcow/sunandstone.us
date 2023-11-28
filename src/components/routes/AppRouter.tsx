@@ -1,7 +1,7 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import { NotFound } from "../pages/NotFound.tsx";
-import { Home } from "../pages/Home.tsx";
-import { Login } from "../pages/auth/Login.tsx";
+import { NotFound } from "../pages/NotFound";
+import { Home } from "../pages/Home";
+import { Login } from "../pages/auth/Login";
 
 export default function AppRouter() {
   return (

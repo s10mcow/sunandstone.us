@@ -1,5 +1,5 @@
 import { vi } from "vitest";
-import { mockAuthenticatedUser } from "../services/__mocks__/Authentication.ts";
+import { mockAuthenticatedUser } from "../services/__mocks__/Authentication";
 
 vi.mock("react-router-dom", () => {
   const reactRouterDom = vi.importActual("react-router-dom");
@@ -9,8 +9,8 @@ vi.mock("react-router-dom", () => {
   };
 });
 
-vi.mock("../services/Authentication.ts", () => {
-  const authentication = vi.importActual("../services/Authentication.ts");
+vi.mock("../services/Authentication", () => {
+  const authentication = vi.importActual("../services/Authentication");
   return {
     ...authentication,
     useAuthenticatedUser: vi.fn(() => mockAuthenticatedUser),

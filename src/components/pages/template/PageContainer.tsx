@@ -1,6 +1,6 @@
 import Grid from "../../common/layout/Grid";
 import { ReactNode } from "react";
-import { useNavigateToLoginIfNotAuthenticated } from "../../../services/Routing.ts";
+import { useNavigateToLoginIfNotAuthenticated } from "../../../services/Routing";
 import { Container } from "@mui/material";
 
 export function PageContainer({

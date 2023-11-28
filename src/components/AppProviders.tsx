@@ -3,7 +3,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import RecoilNexus from "recoil-nexus";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "../services/QueryClient.ts";
+import { queryClient } from "../services/QueryClient";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import {
   createTheme,
@@ -11,7 +11,7 @@ import {
   StyledEngineProvider,
   ThemeProvider,
 } from "@mui/material";
-import { themeOptions } from "../theme/theme.ts";
+import { themeOptions } from "../theme/theme";
 import { SnackbarProvider } from "notistack";
 import { ReactNode } from "react";
 

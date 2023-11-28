@@ -1,4 +1,4 @@
-import { useAuthenticatedUser } from "./Authentication.ts";
+import { useAuthenticatedUser } from "./Authentication";
 import { useNavigate as RrdNavigate } from "react-router-dom";
 import { useEffect } from "react";
 

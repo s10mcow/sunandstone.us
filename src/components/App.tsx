@@ -1,9 +1,9 @@
-import { useAuthenticationMutation } from "../services/Authentication.ts";
-import { FullScreenCircularProgress } from "./common/loader/FullScreenCircularProgress.tsx";
+import { useAuthenticationMutation } from "../services/Authentication";
+import { FullScreenCircularProgress } from "./common/loader/FullScreenCircularProgress";
 import { useEffect } from "react";
-import { useAppErrorHandlers } from "../services/ErrorMessaging.ts";
-import AppRouter from "./routes/AppRouter.tsx";
-import { AppProviders } from "./AppProviders.tsx";
+import { useAppErrorHandlers } from "../services/ErrorMessaging";
+import AppRouter from "./routes/AppRouter";
+import { AppProviders } from "./AppProviders";
 
 export default function App() {
   const {

@@ -4,12 +4,12 @@ import Grid from "../../common/layout/Grid";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { TextFieldWithController } from "../../common/input/TextField.tsx";
-import { useAppNavigation } from "../../../services/Routing.ts";
-import { submitLogin } from "../../../services/Authentication.ts";
-import Button from "../../common/button/Button.tsx";
+import { TextFieldWithController } from "../../common/input/TextField";
+import { useAppNavigation } from "../../../services/Routing";
+import { submitLogin } from "../../../services/Authentication";
+import Button from "../../common/button/Button";
 import { useMutation } from "@tanstack/react-query";
-import { useAppErrorHandlers } from "../../../services/ErrorMessaging.ts";
+import { useAppErrorHandlers } from "../../../services/ErrorMessaging";
 import { useEffect } from "react";
 import { useSnackbar } from "notistack";
 
