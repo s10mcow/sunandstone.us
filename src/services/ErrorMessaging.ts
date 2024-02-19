@@ -2,26 +2,28 @@ import { AxiosError } from "axios";
 import React from "react";
 import { logger } from "./Logger";
 import { useSnackbar } from "notistack";
+import { useAppNavigate } from "./Navigation";
 
 const UNKNOWN_ERROR = "An unknown error has occurred. Please try again later.";
+export const TOKEN_EXPIRED_ERROR_CODE = "TOKEN_EXPIRED";
 
 // Dictionary of error codes returned from the server and their corresponding error messages
 export const errorMessageDictionary = {
   UNKNOWN_ERROR,
-  // TODO: Add error codes here, Example:
-  // "SE-E0001": UNKNOWN_ERROR,
+  [TOKEN_EXPIRED_ERROR_CODE]: "Your session has expired. Please log in again.",
 };
 
 export type ERROR_CODE = keyof typeof errorMessageDictionary;
 
 // This is the type that should be returned from the API in the event of an error
+// TODO: Make sure the API is returning this type with errors
 export const APP_API_ERROR_TYPE = "AppApiError";
 
 export type AppApiError = {
   code: ERROR_CODE;
   details: string;
   message: string;
-  type: "AppApiError";
+  type: typeof APP_API_ERROR_TYPE;
 };
 export type AxiosErrorWithAppApiResponse = AxiosError<AppApiError>;
 
@@ -62,6 +64,8 @@ function useErrorHandler<TError = AppApiError | unknown>(
 ): void {
   const { id, error, onError } = props;
 
+  const appNavigate = useAppNavigate();
+
   const { enqueueSnackbar } = useSnackbar();
 
   const defaultOnErrorHandler = React.useCallback<OnErrorHandler>(
@@ -71,6 +75,14 @@ function useErrorHandler<TError = AppApiError | unknown>(
           message: errorMessageDictionary[AppApiError.code],
           variant: "error",
         });
+
+        if (AppApiError.code === TOKEN_EXPIRED_ERROR_CODE) {
+          enqueueSnackbar({
+            message: errorMessageDictionary.TOKEN_EXPIRED,
+            variant: "error",
+          });
+          appNavigate.toLogin();
+        }
       } else {
         logger.error({
           message: `An unknown error encountered`,

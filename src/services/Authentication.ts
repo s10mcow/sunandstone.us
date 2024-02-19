@@ -1,16 +1,21 @@
 import { useMutation } from "@tanstack/react-query";
-
 import { atom, useRecoilValue } from "recoil";
 import { getRecoil, resetRecoil, setRecoil } from "recoil-nexus";
-import { mockAuthenticatedUser } from "./__mocks__/Authentication";
+import { User as FirebaseUser } from "@firebase/auth";
+import {
+  confirmPasswordResetFirebase,
+  resetFirebaseAnalyticsUserProperties,
+  resetPasswordFirebase,
+  setFirebaseAnalyticsUserProperties,
+  signIn,
+  signOutOfFirebase,
+} from "./Firebase";
+import { queryClient } from "./QueryClient";
 import { logger } from "./Logger";
 
 type AuthenticatedUser = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  id: string;
-  jwtToken?: string;
+  idToken: string;
+  email: string | null;
 };
 
 export const authenticatedUserState = atom<AuthenticatedUser | undefined>({
@@ -22,7 +27,7 @@ export function useAuthenticatedUser() {
   return useRecoilValue(authenticatedUserState);
 }
 
-export async function getAuthenticatedUser() {
+export function getAuthenticatedUser() {
   return getRecoil(authenticatedUserState);
 }
 
@@ -34,29 +39,94 @@ export function resetAuthenticatedUser() {
   resetRecoil(authenticatedUserState);
 }
 
-export function useAuthenticationMutation() {
-  return useMutation({
-    mutationFn: authenticate,
-    mutationKey: ["authenticate"],
-  });
-}
-
-export async function submitLogin({ email }: { email: string }) {
-  if (email === "fail") {
-    throw new Error("Login failed");
+export async function handleAuthChange(user: FirebaseUser | null) {
+  try {
+    if (user) {
+      const idToken = await user.getIdToken();
+      setAuthenticatedUser({
+        user: { idToken, email: user.email },
+      });
+      setFirebaseAnalyticsUserProperties({ userUid: user.uid });
+    } else if (getAuthenticatedUser()) {
+      resetAuthenticatedUser();
+      resetFirebaseAnalyticsUserProperties();
+      // If there was a user and now there isn't, reset the user and remove all queries to ensure we're not caching
+      // data that should be private
+      queryClient.removeQueries();
+    }
+  } catch (error) {
+    logger.error({
+      message: "An unexpected error occurred handling auth change",
+      error: error,
+    });
   }
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-  logger.warn({
-    message: "Login not implemented, using mock user",
-    data: { email },
-  });
-  setAuthenticatedUser({ ...mockAuthenticatedUser });
 }
 
-/**
- * Check for an existing user and set the authenticated user if one exists
- */
-export async function authenticate() {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-  // setAuthenticatedUser({...mockAuthenticatedUser})
+export async function submitLogin({
+  email,
+  password,
+}: {
+  email: string;
+  password: string;
+}) {
+  await signIn({ email, password });
+}
+
+export function useLoginMutation({ onSuccess }: { onSuccess: () => void }) {
+  return useMutation({
+    mutationFn: submitLogin,
+    mutationKey: ["login"],
+    onSuccess,
+  });
+}
+
+export function useResetPasswordMutation({
+  onSuccess,
+  onError,
+}: {
+  onSuccess: () => void;
+  onError: (error: unknown) => void;
+}) {
+  return useMutation({
+    mutationFn: resetPassword,
+    mutationKey: ["resetPassword"],
+    onSuccess,
+    onError,
+  });
+}
+
+export async function resetPassword({ email }: { email: string }) {
+  await resetPasswordFirebase(email);
+}
+
+export function useConfirmResetPasswordMutation({
+  onSuccess,
+  onError,
+}: {
+  onSuccess: () => void;
+  onError: (e: unknown) => void;
+}) {
+  return useMutation({
+    mutationFn: confirmResetPassword,
+    mutationKey: ["confirmResetPassword"],
+    onSuccess,
+    onError,
+  });
+}
+
+export async function confirmResetPassword({
+  oobCode,
+  password,
+}: {
+  oobCode: string;
+  password: string;
+}) {
+  await confirmPasswordResetFirebase({
+    oobCode: oobCode,
+    password,
+  });
+}
+
+export async function signOut() {
+  await signOutOfFirebase();
 }

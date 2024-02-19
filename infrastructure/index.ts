@@ -6,7 +6,6 @@ import { resolve } from "path";
 const stackName = pulumi.getStack();
 const programName = pulumi.getProject();
 
-// TODO: Replace with your own domain name.
 const rootDomainName = "example.com";
 const appDomainName = `app.${rootDomainName}`;
 const appSubdomainName = stackName === "prod" ? "" : stackName;
@@ -77,6 +76,7 @@ const hostedZoneId = aws.route53
 const certificateValidationDomain = new aws.route53.Record(
   `${stackName}-${programName}-cert-dns-validation`,
   {
+    allowOverwrite: true,
     name: certificate.domainValidationOptions[0].resourceRecordName,
     zoneId: hostedZoneId,
     type: certificate.domainValidationOptions[0].resourceRecordType,
@@ -177,6 +177,7 @@ new aws.s3.BucketPolicy(
 new aws.route53.Record(
   `${stackName}-${programName}-cdn-a-record`,
   {
+    allowOverwrite: true,
     name: appSubdomainRecordName,
     zoneId: hostedZoneId,
     type: "A",

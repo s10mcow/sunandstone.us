@@ -6,14 +6,13 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "../services/QueryClient";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import {
-  createTheme,
   CssBaseline,
   StyledEngineProvider,
   ThemeProvider,
 } from "@mui/material";
-import { themeOptions } from "../theme/theme";
 import { SnackbarProvider } from "notistack";
 import { ReactNode } from "react";
+import { theme } from "../theme/theme";
 
 export function AppProviders({ children }: { children: ReactNode }) {
   return (
@@ -21,10 +20,9 @@ export function AppProviders({ children }: { children: ReactNode }) {
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <RecoilNexus />
         <QueryClientProvider client={queryClient}>
-          <ThemeProvider theme={createTheme(themeOptions)}>
+          <ThemeProvider theme={theme}>
             <StyledEngineProvider injectFirst>
               <CssBaseline />
-
               <SnackbarProvider>{children}</SnackbarProvider>
             </StyledEngineProvider>
           </ThemeProvider>
