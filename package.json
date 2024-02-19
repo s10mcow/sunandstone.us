@@ -82,8 +82,6 @@
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
-    "@pulumi/aws": "^6.13.1",
-    "@pulumi/synced-folder": "^0.11.1",
     "@tanstack/react-query-devtools": "^5.0.0",
     "@thesparklaboratory/eslint-config-react": "^0.0.1",
     "@thesparklaboratory/tsconfig-react": "^0.0.1",

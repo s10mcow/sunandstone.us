@@ -6,16 +6,19 @@ import { resolve } from "path";
 const stackName = pulumi.getStack();
 const programName = pulumi.getProject();
 
+// TODO: Replace with your domain name
 const rootDomainName = "example.com";
-const appDomainName = `app.${rootDomainName}`;
+const appDomainName =
+  stackName === "prod" ? rootDomainName : `app.${rootDomainName}`;
 const appSubdomainName = stackName === "prod" ? "" : stackName;
 const appFullDomainName = appSubdomainName.length
   ? `${appSubdomainName}.${appDomainName}`
   : appDomainName;
-const appSubdomainRecordName = appFullDomainName.replace(
-  `.${rootDomainName}`,
-  "",
-);
+const appSubdomainRecordName =
+  stackName === "prod"
+    ? ""
+    : appFullDomainName.replace(`.${rootDomainName}`, "");
+
 const buildDir = resolve(process.cwd(), "../build");
 
 const region = new aws.Provider(
