@@ -41,6 +41,10 @@ jobs:
           GITHUB_REF_TYPE: ${{ github.ref_type }}
       - name: Install Dependencies
         run: yarn
+      - name: Lint
+        run: yarn lint
+      - name: Typecheck
+        run: yarn typecheck
       - name: Build Web App
         run: |
           if [[ "$GITHUB_REF_TYPE" == "tag" ]]; then
@@ -66,7 +70,7 @@ jobs:
         uses: pulumi/actions@v4
       - name: Ensure stack is unlocked
         run: |
-          pulumi login s3://stockitrf-pulumi
+          pulumi login s3://react-material-starter-v2-pulumi
           (
             pulumi stack ls | grep "${{ env.PULUMI_STACK }}"
             if [ $? -eq 0 ]; then
@@ -80,7 +84,7 @@ jobs:
         uses: pulumi/actions@v4
         id: pulumi
         with:
-          cloud-url: s3://stockitrf-pulumi
+          cloud-url: s3://react-material-starter-v2-pulumi
           command: up
           comment-on-pr: true
           refresh: true

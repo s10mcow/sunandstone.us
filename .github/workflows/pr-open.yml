@@ -21,6 +21,10 @@ jobs:
         run: yarn
       - name: Build Web App
         run: yarn build
+      - name: Lint
+        run: yarn lint
+      - name: Typecheck
+        run: yarn typecheck
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -31,7 +35,7 @@ jobs:
         uses: pulumi/actions@v4
       - name: Ensure stack is unlocked
         run: |
-          pulumi login s3://stockitrf-pulumi
+          pulumi login s3://react-material-starter-v2-pulumi
           (
             pulumi stack ls | grep "pr-${{ github.event.pull_request.id }}"
             if [ $? -eq 0 ]; then
@@ -44,7 +48,7 @@ jobs:
       - name: Deploy Infrastructure
         uses: pulumi/actions@v4
         with:
-          cloud-url: s3://stockitrf-pulumi
+          cloud-url: s3://react-material-starter-v2-pulumi
           command: up
           comment-on-pr: true
           refresh: true
