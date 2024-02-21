@@ -10,7 +10,7 @@ const programName = pulumi.getProject();
 const rootDomainName = "example.com";
 const appDomainName =
   stackName === "prod" ? rootDomainName : `app.${rootDomainName}`;
-const appSubdomainName = stackName === "prod" ? "" : stackName;
+const appSubdomainName = stackName === "prod" ? "app" : stackName;
 const appFullDomainName = appSubdomainName.length
   ? `${appSubdomainName}.${appDomainName}`
   : appDomainName;
