@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import { useCreateUser } from "@thesparklaboratory/teetimeportal-react-query-client";
+import { useCreateUser } from "@thesparklaboratory/serverless-rest-starter-react-query-client";
 import { useSnackbar } from "notistack";
 import CreateAccountForm, {
   CreateAccountFormValues,

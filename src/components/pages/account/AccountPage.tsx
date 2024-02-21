@@ -18,11 +18,11 @@ import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import Tab from "@mui/material/Tab";
+import { useUser } from "../../../services/User";
 import {
   getGetUserQueryKey,
   useUpdateUser,
-} from "@thesparklaboratory/teetimeportal-react-query-client";
-import { useUser } from "../../../services/User";
+} from "@thesparklaboratory/serverless-rest-starter-react-query-client";
 
 export function AccountPage() {
   const navigator = useAppNavigate();

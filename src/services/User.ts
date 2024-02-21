@@ -1,4 +1,4 @@
-import { useGetUser } from "@thesparklaboratory/teetimeportal-react-query-client";
+import { useGetUser } from "@thesparklaboratory/serverless-rest-starter-react-query-client";
 import { useAppErrorHandlers } from "./ErrorMessaging";
 import { useAuthenticatedUser } from "./Authentication";
 
