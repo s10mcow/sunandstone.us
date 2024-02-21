@@ -1,19 +1,9 @@
-import { Button, CircularProgress, Paper, Typography } from "@mui/material";
-import { PageContainer } from "./template/PageContainer";
-import { resetAuthenticatedUser } from "../../services/Authentication";
+import { CircularProgress, Container, Paper, Typography } from "@mui/material";
 import Grid from "../common/layout/Grid";
-import { useSnackbar } from "notistack";
 import { usePosts } from "../../services/Posts";
 import { useAppErrorHandlers } from "../../services/ErrorMessaging";
 
 export function Home() {
-  const { enqueueSnackbar } = useSnackbar();
-
-  function handleLogOut() {
-    resetAuthenticatedUser();
-    enqueueSnackbar("Logged out", { variant: "success" });
-  }
-
   const {
     data: posts,
     error: postsError,
@@ -28,7 +18,7 @@ export function Home() {
   ]);
 
   return (
-    <PageContainer isAuthRequired={true}>
+    <Container maxWidth={"md"}>
       <Grid container direction="column" spacing={2}>
         <Grid>
           <Typography variant="h1">Home</Typography>
@@ -47,10 +37,7 @@ export function Home() {
             </Grid>
           ))}
         </Grid>
-        <Grid>
-          <Button onClick={handleLogOut}>Logout</Button>
-        </Grid>
       </Grid>
-    </PageContainer>
+    </Container>
   );
 }

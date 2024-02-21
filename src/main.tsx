@@ -3,10 +3,9 @@ import ReactDOM from "react-dom/client";
 import App from "./components/App";
 import { LicenseInfo } from "@mui/x-license-pro";
 import { AppProviders } from "./components/AppProviders";
+import { appConfig } from "./services/AppConfig";
 
-LicenseInfo.setLicenseKey(
-  "2984b3e7bf15479286497629cb110e76Tz02NzY2MyxFPTE3MTcyNjY3MjMwMDAsUz1wcm8sTE09cGVycGV0dWFsLEtWPTI=",
-);
+LicenseInfo.setLicenseKey(appConfig.muiLicenseKey);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

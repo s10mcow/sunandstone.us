@@ -6,17 +6,19 @@ import { resolve } from "path";
 const stackName = pulumi.getStack();
 const programName = pulumi.getProject();
 
-// TODO: Replace with your own domain name.
+// TODO: Replace with your domain name
 const rootDomainName = "example.com";
-const appDomainName = `app.${rootDomainName}`;
+const appDomainName =
+  stackName === "prod" ? rootDomainName : `app.${rootDomainName}`;
 const appSubdomainName = stackName === "prod" ? "" : stackName;
 const appFullDomainName = appSubdomainName.length
   ? `${appSubdomainName}.${appDomainName}`
   : appDomainName;
-const appSubdomainRecordName = appFullDomainName.replace(
-  `.${rootDomainName}`,
-  "",
-);
+const appSubdomainRecordName =
+  stackName === "prod"
+    ? ""
+    : appFullDomainName.replace(`.${rootDomainName}`, "");
+
 const buildDir = resolve(process.cwd(), "../build");
 
 const region = new aws.Provider(
@@ -77,6 +79,7 @@ const hostedZoneId = aws.route53
 const certificateValidationDomain = new aws.route53.Record(
   `${stackName}-${programName}-cert-dns-validation`,
   {
+    allowOverwrite: true,
     name: certificate.domainValidationOptions[0].resourceRecordName,
     zoneId: hostedZoneId,
     type: certificate.domainValidationOptions[0].resourceRecordType,
@@ -177,6 +180,7 @@ new aws.s3.BucketPolicy(
 new aws.route53.Record(
   `${stackName}-${programName}-cdn-a-record`,
   {
+    allowOverwrite: true,
     name: appSubdomainRecordName,
     zoneId: hostedZoneId,
     type: "A",
