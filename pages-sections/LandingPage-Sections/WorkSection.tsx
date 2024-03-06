@@ -56,7 +56,7 @@ export default function WorkSection() {
           <Container>
             <Email
               className={classes.description}
-              href="mailto:hello@tubuscapital.com"
+              href="mailto:hello@sunandstone.us"
             >
               hello@sunandstone.us
             </Email>
