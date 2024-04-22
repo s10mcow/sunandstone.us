@@ -1,14 +1,7 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { SectionContainer } from "./styles";
-import {
-  Apartment,
-  CurrencyExchange,
-  Home,
-  Landscape,
-  Loop,
-  Update,
-} from "@mui/icons-material";
+import { Apartment, Home, Landscape } from "@mui/icons-material";
 
 const Item = styled(Box)(({ theme }) => ({
   display: "flex",
