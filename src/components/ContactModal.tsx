@@ -14,10 +14,11 @@ export default function ContactModal({
   isOpen: boolean;
   handleClose: () => void;
 }) {
+  const [loading, setLoading] = useState(false);
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-
+    setLoading(true);
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -27,7 +28,7 @@ export default function ContactModal({
       // eslint-disable-next-line
       .then(() => console.log("Form successfully submitted"))
       .catch((error) => alert(error));
-    // You can handle submission logic here, such as sending data to a backend server
+    setLoading(false);
     handleClose(); // Close the modal upon form submission
   };
 
@@ -84,7 +85,9 @@ export default function ContactModal({
           />
           <DialogActions>
             <Button onClick={handleClose}>Cancel</Button>
-            <Button type="submit">Send</Button>
+            <Button type="submit" disabled={loading}>
+              Send
+            </Button>
           </DialogActions>
         </form>
       </DialogContent>
