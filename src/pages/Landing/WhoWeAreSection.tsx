@@ -11,6 +11,8 @@ import {
 } from "@mui/material";
 import { SectionContainer } from "./styles";
 import { LinkedIn } from "@mui/icons-material";
+import sten from "@assets/images/sten.jpg";
+import marco from "@assets/images/marco.jpeg";
 
 function WhoWeAreSection() {
   return (
@@ -54,7 +56,7 @@ function WhoWeAreSection() {
                     <Grid item xs={12} sm={12} md={12} sx={{ padding: 4 }}>
                       <Avatar
                         alt="Sten Muchow"
-                        src="src/assets/images/sten.jpg"
+                        src={sten}
                         sx={{ width: "100%", height: "100%" }}
                       />
                     </Grid>
@@ -95,7 +97,7 @@ function WhoWeAreSection() {
                     <Grid item xs={12} sm={12} md={12} sx={{ padding: 4 }}>
                       <Avatar
                         alt="Marco Varlesi"
-                        src="src/assets/images/marco.jpeg"
+                        src={marco}
                         sx={{ width: "100%", height: "100%" }}
                       />
                     </Grid>
