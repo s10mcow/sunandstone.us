@@ -36,16 +36,20 @@ function HeroSection() {
         <Container maxWidth="lg" sx={{ zIndex: 1 }}>
           <Typography
             component="h1"
-            variant="h1"
+            variant="h2"
             align="center"
             gutterBottom
-            textTransform={"uppercase"}
+            textTransform="uppercase"
             sx={{
               fontWeight: "bold",
               fontFamily: "SF Pro Text",
               color: "white",
               marginTop: {
-                xs: "40px",
+                xs: "20px",
+              },
+              fontSize: {
+                xs: "3rem",
+                md: "5rem",
               },
             }}
           >
@@ -59,6 +63,11 @@ function HeroSection() {
               fontWeight: "bold",
               fontFamily: "SF Pro Text",
               color: "white",
+              px: { xs: 2, sm: 4 },
+              fontSize: {
+                xs: "1rem",
+                md: "1.5rem",
+              },
             }}
           >
             A FLORIDA-BASED GLOBAL REAL ESTATE DEVELOPMENT AND CAPITAL
