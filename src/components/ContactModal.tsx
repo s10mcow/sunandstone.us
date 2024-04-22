@@ -38,9 +38,8 @@ export default function ContactModal({
         <DialogContentText>
           To send us a message, please fill out the following form:
         </DialogContentText>
-        <form onSubmit={handleSubmit} noValidate name="contact" method="POST">
+        <form onSubmit={handleSubmit} name="contact" method="POST">
           <input type="hidden" name="form-name" value="contact" />
-
           <TextField
             autoFocus
             margin="dense"
@@ -60,6 +59,15 @@ export default function ContactModal({
             fullWidth
             variant="outlined"
             name="email"
+          />
+          <TextField
+            margin="dense"
+            id="phone"
+            label="Phone Number"
+            type="tel"
+            fullWidth
+            variant="outlined"
+            name="phone"
             required
           />
           <TextField

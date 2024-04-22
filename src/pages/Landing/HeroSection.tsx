@@ -66,8 +66,12 @@ function HeroSection() {
             REPOSITIONING OF LAND, RESIDENTIAL, AND COMMERCIAL PROPERTIES.
           </Typography>
           <Box sx={{ textAlign: "center" }}>
-            <Button variant={"contained"} onClick={() => setOpen(true)}>
-              Contact us!
+            <Button
+              size="large"
+              variant={"contained"}
+              onClick={() => setOpen(true)}
+            >
+              Contact us
             </Button>
           </Box>
         </Container>
