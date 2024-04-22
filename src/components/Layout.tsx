@@ -1,6 +1,4 @@
 import React from "react";
-
-import NavigationBar from "@/components/NavigationBar";
 import LoadingWrapper from "@/components/Loading";
 import { Box, Typography } from "@mui/material";
 
