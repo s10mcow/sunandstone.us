@@ -18,11 +18,15 @@ export default function ContactModal({
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line
-    console.log({
-      name: data.get("name"),
-      email: data.get("email"),
-      message: data.get("message"),
-    });
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      // @ts-ignore
+      body: new URLSearchParams(data).toString(),
+    })
+      // eslint-disable-next-line
+      .then(() => console.log("Form successfully submitted"))
+      .catch((error) => alert(error));
     // You can handle submission logic here, such as sending data to a backend server
     handleClose(); // Close the modal upon form submission
   };
@@ -34,13 +38,9 @@ export default function ContactModal({
         <DialogContentText>
           To send us a message, please fill out the following form:
         </DialogContentText>
-        <form
-          onSubmit={handleSubmit}
-          noValidate
-          name="contact"
-          method="POST"
-          data-netlify="true"
-        >
+        <form onSubmit={handleSubmit} noValidate name="contact" method="POST">
+          <input type="hidden" name="form-name" value="contact" />
+
           <TextField
             autoFocus
             margin="dense"
