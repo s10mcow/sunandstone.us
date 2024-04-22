@@ -41,8 +41,8 @@ const Layout = ({ children, isLoading }: LayoutProps) => {
         }}
       >
         {children}
+        <Footer />
       </Box>
-      <Footer />
     </LoadingWrapper>
   );
 };

@@ -69,7 +69,7 @@ function AboutSection() {
 
           <Grid container spacing={4} mt={2}>
             {featureList.map((feature, index) => (
-              <Grid sm={4} key={index} item>
+              <Grid xs={12} sm={12} md={4} key={index} item>
                 <Item>
                   {feature.icon}
                   <Typography variant="h4" sx={{ mt: 2 }}>

@@ -34,7 +34,14 @@ function SearchSection() {
           align="center"
           gutterBottom
           textTransform={"uppercase"}
-          sx={{ fontWeight: "bold", fontFamily: "SF Pro Text", color: "white" }}
+          sx={{
+            fontWeight: "bold",
+            fontFamily: "SF Pro Text",
+            color: "white",
+            marginTop: {
+              xs: "40px",
+            },
+          }}
         >
           Rising Tide Capital
         </Typography>
@@ -42,7 +49,11 @@ function SearchSection() {
           variant="h5"
           align="center"
           paragraph
-          sx={{ fontWeight: "bold", fontFamily: "SF Pro Text", color: "white" }}
+          sx={{
+            fontWeight: "bold",
+            fontFamily: "SF Pro Text",
+            color: "white",
+          }}
         >
           A FLORIDA-BASED GLOBAL REAL ESTATE DEVELOPMENT AND CAPITAL INVESTMENT
           FIRM ENGAGED IN ACQUISITIONS, DEVELOPMENT AND REPOSITIONING OF LAND,
