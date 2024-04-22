@@ -36,11 +36,7 @@
       "prettier --write"
     ]
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
+
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
@@ -67,9 +63,6 @@
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@tanstack/react-query-devtools": "^5.0.0",
-    "@thesparklaboratory/eslint-config-react": "^0.0.1",
-    "@thesparklaboratory/tsconfig-react": "^0.0.1",
-    "@thesparklaboratory/vite-config-react": "^0.0.3n",
     "@types/autosuggest-highlight": "^3.2.3",
     "@types/lodash": "^4.14.202",
     "@types/qs": "^6.9.11",
