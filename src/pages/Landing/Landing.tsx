@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import SearchSection from "./SearchSection";
 import AboutSection from "./AboutSection";
 import WhoWeAreSection from "./WhoWeAreSection";
-import AiSection from "./AiSection";
+import ContactUsSection from "./ContactUsSection";
 
 function Landing() {
   return (
@@ -10,7 +10,7 @@ function Landing() {
       <SearchSection />
       <AboutSection />
       <WhoWeAreSection />
-      <AiSection />
+      <ContactUsSection />
     </Layout>
   );
 }
