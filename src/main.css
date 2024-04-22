@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/SF-Pro-Text-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./assets/fonts/SF-Pro-Text-Semibold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/fonts/SF-Pro-Text-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 800;
+  src: url("./assets/fonts/SF-Pro-Text-Heavy.otf") format("opentype");
+}
+
+html {
+  body {
+    margin: 0;
+    font-family:
+      "SF Pro Text",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}

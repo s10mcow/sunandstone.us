@@ -1,10 +1,51 @@
 {
-  "extends": "./node_modules/@thesparklaboratory/tsconfig-react/src/react-tsconfig-base.json",
   "compilerOptions": {
+    "target": "esnext",
+    "lib": [
+      "DOM",
+      "ES2020",
+      "ESNext"
+    ],
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "useUnknownInCatchVariables": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true,
+    "types": [
+      "vitest/globals",
+      "vite-plugin-svgr/client"
+    ],
+    "isolatedModules": false,
     "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"],
+      "@pages/*": ["pages/*"],
+
+      "@assets/*": ["assets/*"],
+      "@utils": ["utils/utils"],
+      "@recoil/*": ["recoil/*"],
+      "@theme/*": ["theme/theme"],
+      "@api": ["services/Api"],
+      "@services/*": ["services/*"]
+    }
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx"
+  ],
 }
