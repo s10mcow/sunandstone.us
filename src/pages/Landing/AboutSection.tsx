@@ -59,9 +59,9 @@ function AboutSection() {
                   What we do
                 </Typography>
                 <Typography gutterBottom color="grey.600">
-                  Rising Tide Capital Partners focuses on investments through
-                  real estate. We have three areas of concern, multi-family,
-                  land, and single family houses.
+                  Sun & Stone focuses on investments through real estate. We
+                  have three areas of concern, multi-family, land, and single
+                  family houses.
                 </Typography>
               </Grid>
             </Grid>

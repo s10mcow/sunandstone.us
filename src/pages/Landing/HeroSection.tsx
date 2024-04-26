@@ -1,5 +1,5 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import hero from "@assets/images/ocean.jpg";
+import hero from "@assets/images/landing-bg.jpg";
 import { styled } from "@mui/material/styles";
 import ContactModal from "@/components/ContactModal";
 import { useState } from "react";
@@ -53,7 +53,7 @@ function HeroSection() {
               },
             }}
           >
-            Rising Tide Capital
+            Sun and Stone
           </Typography>
           <Typography
             variant="h5"

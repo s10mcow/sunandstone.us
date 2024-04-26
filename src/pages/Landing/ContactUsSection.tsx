@@ -63,8 +63,8 @@ function ContactUsSection() {
                 </Button>
               </Box>
               <Grid sx={{ mt: 3, color: "#777" }}>
-                <Email href="mailto:hello@risingtidecapital.us">
-                  hello@risingtidecapital.us
+                <Email href="mailto:hello@sunandstone.us">
+                  hello@sunandstone.us
                 </Email>
                 <PhoneLine href="tel:904-325-6275">
                   Phone: 904-325-6275

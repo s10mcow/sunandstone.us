@@ -24,7 +24,7 @@ const Footer = () => {
         align="center"
         sx={{ pt: 4 }}
       >
-        © {new Date().getFullYear()} Rising Tide Capital Partners LLC
+        © {new Date().getFullYear()} San & Stone LLC
       </Typography>
     </Box>
   );
