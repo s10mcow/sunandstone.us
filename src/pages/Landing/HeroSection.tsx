@@ -1,5 +1,5 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import hero from "@assets/images/landing-bg.jpg";
+import hero from "@assets/images/ocean.jpg";
 import { styled } from "@mui/material/styles";
 import ContactModal from "@/components/ContactModal";
 import { useState } from "react";
@@ -23,7 +23,7 @@ export const ImageWrapper = styled(Box)({
     height: "100%",
     top: 0,
     left: 0,
-    background: "rgba(0,0,0,0.5)",
+    background: "rgba(0,0,0,0.3)",
   },
 });
 function HeroSection() {
@@ -60,8 +60,6 @@ function HeroSection() {
             align="center"
             paragraph
             sx={{
-              fontWeight: "bold",
-              fontFamily: "SF Pro Text",
               color: "white",
               px: { xs: 2, sm: 4 },
               fontSize: {
