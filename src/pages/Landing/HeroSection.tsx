@@ -1,7 +1,7 @@
-import { Box, Button, Container, Typography } from "@mui/material";
-import hero from "@assets/images/landing-bg.jpg";
-import { styled } from "@mui/material/styles";
 import ContactModal from "@/components/ContactModal";
+import hero from "@assets/images/landing-bg.jpg";
+import { Box, Button, Container, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { useState } from "react";
 
 export const ImageWrapper = styled(Box)({
@@ -53,7 +53,7 @@ function HeroSection() {
               },
             }}
           >
-            Sun and Stone
+            San and Stone
           </Typography>
           <Typography
             variant="h5"
