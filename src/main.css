@@ -27,7 +27,7 @@
 }
 
 html {
-  body {
+  :is(body) {
     margin: 0;
     font-family:
       "SF Pro Text",
@@ -41,7 +41,7 @@ html {
       "Apple Color Emoji",
       "Segoe UI Emoji",
       "Segoe UI Symbol";
-    a {
+    :is(a) {
       color: inherit;
       text-decoration: none;
     }

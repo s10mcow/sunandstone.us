@@ -59,50 +59,50 @@ function TestimonialsSection() {
   const testimonials = [
     {
       name: "Michael Rodriguez",
-      role: "Property Owner",
-      location: "Tampa, FL",
+      role: "Land Owner",
+      location: "Texas",
       rating: 5,
-      text: "San and Stone made selling our family property incredibly smooth. Their expertise in the Florida market and professional approach gave us confidence throughout the entire process. We got a fair price and closed quickly.",
+      text: "San and Stone made selling our vacant land incredibly smooth. They provided a fair offer and handled all the paperwork. The whole process took just 35 days from start to finish. Couldn't be happier!",
       initials: "MR",
     },
     {
       name: "Sarah Chen",
-      role: "Real Estate Investor",
-      location: "Orlando, FL",
+      role: "Property Owner",
+      location: "Colorado",
       rating: 5,
-      text: "Working with San and Stone on our multi-family investment was exceptional. Their market knowledge and attention to detail helped us identify a property that exceeded our ROI expectations. Highly recommended!",
+      text: "I inherited 20 acres that I didn't know what to do with. San and Stone gave me a no-obligation offer that was fair and reasonable. They were professional throughout and made the sale stress-free.",
       initials: "SC",
     },
     {
       name: "David Thompson",
-      role: "Land Developer",
-      location: "Jacksonville, FL",
+      role: "Land Seller",
+      location: "Arizona",
       rating: 5,
-      text: "The team at San and Stone understands the development process like no other. They helped us navigate zoning challenges and turned a complex land deal into a profitable venture. True professionals.",
+      text: "After years of paying taxes on land I wasn't using, San and Stone offered a quick solution. They understood the local market and provided an offer that made sense. Great experience overall.",
       initials: "DT",
     },
     {
       name: "Lisa Martinez",
-      role: "Property Seller",
-      location: "Miami, FL",
+      role: "Land Owner",
+      location: "Nevada",
       rating: 5,
-      text: "After trying to sell our commercial property for months with another company, San and Stone closed the deal in just 6 weeks. Their network and negotiation skills are outstanding.",
+      text: "I was skeptical about selling to a land buyer, but San and Stone exceeded my expectations. They were transparent about their process and closed exactly when they said they would - 42 days.",
       initials: "LM",
     },
     {
       name: "Robert Johnson",
-      role: "Investment Partner",
-      location: "Fort Lauderdale, FL",
+      role: "Property Seller",
+      location: "New Mexico",
       rating: 5,
-      text: "San and Stone's strategic approach to real estate investment is impressive. They've consistently delivered strong returns on our joint ventures and maintain excellent communication throughout.",
+      text: "San and Stone's straightforward approach impressed me. No hidden fees, no surprises, just a fair offer and professional service. They made selling my land simple and hassle-free.",
       initials: "RJ",
     },
     {
       name: "Amanda Foster",
-      role: "First-time Seller",
-      location: "St. Petersburg, FL",
+      role: "First-time Land Seller",
+      location: "Utah",
       rating: 5,
-      text: "As a first-time property seller, I was nervous about the process. San and Stone walked me through every step, answered all my questions, and made sure I felt comfortable with every decision.",
+      text: "As someone who had never sold land before, I appreciated how San and Stone explained everything clearly. They answered all my questions and made the entire process easy to understand.",
       initials: "AF",
     },
   ];
@@ -141,8 +141,8 @@ function TestimonialsSection() {
                 color="text.secondary"
                 sx={{ maxWidth: "800px", mx: "auto" }}
               >
-                Don't just take our word for it. Here's what property owners and
-                investors have to say about working with San and Stone.
+                Don't just take our word for it. Here's what land owners across
+                the USA have to say about selling their land to San and Stone.
               </Typography>
             </Box>
           </Grid>

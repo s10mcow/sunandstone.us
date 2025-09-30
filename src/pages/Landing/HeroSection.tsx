@@ -1,5 +1,6 @@
 import ContactModal from "@/components/ContactModal";
 import hero from "@assets/images/landing-bg.jpg";
+import heroWebp from "@assets/images/landing-bg.webp";
 import { Box, Button, Container, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
@@ -7,7 +8,8 @@ import { useState } from "react";
 export const ImageWrapper = styled(Box)({
   width: "100%",
   height: "80vh",
-  backgroundImage: `url(${hero})`,
+  // Use WebP with fallback to JPEG
+  backgroundImage: `url(${heroWebp}), url(${hero})`,
   backgroundColor: "grey.800",
   backgroundSize: "cover",
   backgroundPosition: "center",

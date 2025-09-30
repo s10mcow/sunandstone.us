@@ -51,66 +51,63 @@ function FAQSection() {
   const faqs = [
     {
       id: "panel1",
-      question: "What types of properties does San and Stone invest in?",
+      question: "What types of land do you buy?",
       answer:
-        "We focus on three main areas: multi-family properties (from duplexes to large apartment complexes), land development opportunities, and single-family houses. We look for properties with strong potential for value creation through development, renovation, or repositioning in the market.",
+        "We buy all types of vacant land across the USA including residential lots, agricultural land, commercial land, industrial parcels, and raw acreage. Whether your land is developed or undeveloped, we're interested in making you a fair offer.",
     },
     {
       id: "panel2",
-      question: "What geographic areas do you operate in?",
+      question: "What states do you buy land in?",
       answer:
-        "While we're based in Florida, we operate as a global real estate investment firm. Our primary focus is on properties throughout the United States, with particular expertise in Florida markets where we have deep local knowledge and established relationships.",
+        "We buy land nationwide across all 50 states. While we're based in Florida, we have experience and trusted partners throughout the USA to ensure smooth transactions regardless of where your property is located.",
     },
     {
       id: "panel3",
-      question:
-        "How do you determine property values and investment potential?",
+      question: "How do you determine the value of my land?",
       answer:
-        "We use comprehensive market analysis, including comparable sales data, rental income potential, development costs, and local market trends. Our team conducts thorough due diligence including zoning research, environmental assessments, and financial projections before making any investment decisions.",
+        "We use comprehensive market analysis including recent comparable sales, current market trends, zoning information, and development potential. Our team reviews county records, assesses accessibility, utilities, and other factors that affect land value to provide you with a fair offer.",
     },
     {
       id: "panel4",
-      question:
-        "Do you work with individual property owners or just large developers?",
+      question: "Do I need to pay any fees or commissions?",
       answer:
-        "We work with both individual property owners and large developers. Whether you own a single property or have a portfolio of assets, we're interested in discussing potential opportunities. We believe in building long-term relationships regardless of the size of the initial transaction.",
+        "No, there are absolutely no fees, commissions, or hidden costs when you sell your land to us. We handle all closing costs and work with trusted title companies to ensure a smooth transaction. You receive the full agreed-upon amount.",
     },
     {
       id: "panel5",
-      question: "What is your typical investment timeline?",
+      question: "How long does the selling process take?",
       answer:
-        "Our investment timeline varies depending on the property type and strategy. For development projects, we typically hold properties for 2-5 years. For repositioning opportunities, the timeline might be 1-3 years. We're flexible and base our timeline on market conditions and the specific opportunity.",
+        "Our typical timeline is 30-45 days from initial contact to closing. This includes property evaluation, title research, and closing preparation. We can often move faster if needed, and we'll keep you informed throughout the entire process.",
     },
     {
       id: "panel6",
-      question: "How quickly can you close on a property?",
+      question: "What if my land has issues like back taxes or liens?",
       answer:
-        "We can move quickly when the right opportunity presents itself. For cash purchases, we can typically close within 2-4 weeks, depending on due diligence requirements. For more complex transactions involving financing, the timeline may be 4-8 weeks.",
+        "We can often work with properties that have complications like back taxes, liens, or title issues. Our team has experience resolving these matters as part of the transaction. Contact us to discuss your specific situation - we may still be able to help.",
     },
     {
       id: "panel7",
-      question: "Do you provide financing or work with investors?",
+      question: "Do I need to clean up or improve the land before selling?",
       answer:
-        "Yes, we work with a network of private investors and lending partners. We can structure deals in various ways, including joint ventures, partnerships, and traditional financing arrangements. We're always open to discussing creative financing solutions.",
+        "No, we buy land in as-is condition. You don't need to clear brush, remove debris, or make any improvements. We handle any necessary cleanup or development after the purchase, saving you time and money.",
     },
     {
       id: "panel8",
-      question:
-        "What makes San and Stone different from other real estate investment companies?",
+      question: "What makes San and Stone different from other land buyers?",
       answer:
-        "Our combination of local market expertise, technical background (Sten's computer science and mathematics education), and commitment to community impact sets us apart. We take a data-driven approach to investments while maintaining personal relationships with all our partners and clients.",
+        "We combine professional expertise with personal service. Our background in data analysis ensures fair pricing, while our commitment to transparency means no surprises. We work with established title companies and maintain clear communication throughout the process.",
     },
     {
       id: "panel9",
-      question: "How can I get in touch to discuss a potential opportunity?",
+      question: "How do I get started selling my land?",
       answer:
-        "You can reach us through our contact form, email us at hello@sunandstone.us, or call us at (904) 325-6275. We're always happy to discuss potential opportunities and answer any questions you might have about working with San and Stone.",
+        "Simply contact us through our website form, email us at hello@sunandstone.us, or call us at (904) 325-6275. We'll ask some basic questions about your property and can often provide an initial assessment within 24 hours.",
     },
     {
       id: "panel10",
-      question: "Do you charge any upfront fees?",
+      question: "Is there any obligation when I request an offer?",
       answer:
-        "No, we don't charge any upfront fees for evaluating properties or discussing potential opportunities. We only succeed when we complete a mutually beneficial transaction. Our initial consultations and property evaluations are always free.",
+        "Absolutely not. Our property evaluations and offers are completely free with no obligation. You can take time to consider our offer, get a second opinion, or simply use it for your own planning purposes. There's no pressure to sell.",
     },
   ];
 
@@ -139,8 +136,8 @@ function FAQSection() {
                 color="text.secondary"
                 sx={{ maxWidth: "800px", mx: "auto" }}
               >
-                Get answers to common questions about working with San and
-                Stone. Don't see your question? Contact us directly.
+                Get answers to common questions about selling your land to San
+                and Stone. Don't see your question? Contact us directly.
               </Typography>
             </Box>
           </Grid>

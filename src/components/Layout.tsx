@@ -1,11 +1,9 @@
 import Header from "@/components/Header";
-import LoadingWrapper from "@/components/Loading";
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
 type LayoutProps = {
   children: React.ReactNode;
-  isLoading?: boolean;
 };
 
 const Footer = () => {
@@ -155,9 +153,9 @@ const Footer = () => {
   );
 };
 
-const Layout = ({ children, isLoading }: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
-    <LoadingWrapper isLoading={isLoading}>
+    <>
       <Header />
       <Box
         sx={{
@@ -172,7 +170,7 @@ const Layout = ({ children, isLoading }: LayoutProps) => {
         </Box>
         <Footer />
       </Box>
-    </LoadingWrapper>
+    </>
   );
 };
 

@@ -37,13 +37,21 @@
     <meta name="ICBM" content="27.7663, -82.6404" />
     
     <!-- Preload critical resources -->
+    <link rel="preload" href="/src/assets/images/landing-bg.webp" as="image" type="image/webp" />
     <link rel="preload" href="/src/assets/images/landing-bg.jpg" as="image" type="image/jpeg" />
     <link rel="preload" href="/src/assets/fonts/SF-Pro-Text-Bold.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/src/assets/fonts/SF-Pro-Text-Regular.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/src/assets/fonts/SF-Pro-Text-Semibold.otf" as="font" type="font/otf" crossorigin />
     
+    <!-- Preconnect to Google Fonts for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Load Google Fonts with font-display: swap to prevent render blocking -->
     <link
             rel="stylesheet"
             type="text/css"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons|Montserrat:300,400,500,700"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons|Montserrat:300,400,500,700&display=swap"
     />
     
     <!-- JSON-LD Structured Data -->
