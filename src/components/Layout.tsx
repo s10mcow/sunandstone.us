@@ -1,6 +1,7 @@
-import React from "react";
+import Header from "@/components/Header";
 import LoadingWrapper from "@/components/Loading";
 import { Box, Typography } from "@mui/material";
+import React from "react";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -24,7 +25,7 @@ const Footer = () => {
         align="center"
         sx={{ pt: 4 }}
       >
-        © {new Date().getFullYear()} San & Stone LLC
+        © {new Date().getFullYear()} San and Stone LLC
       </Typography>
     </Box>
   );
@@ -33,14 +34,18 @@ const Footer = () => {
 const Layout = ({ children, isLoading }: LayoutProps) => {
   return (
     <LoadingWrapper isLoading={isLoading}>
+      <Header />
       <Box
         sx={{
           display: "grid",
           gridTemplateColumns: "1fr",
-          gridTemplateRows: "1fr",
+          gridTemplateRows: "1fr auto",
+          paddingTop: "64px", // Account for fixed header
         }}
       >
-        {children}
+        <Box component="main" role="main">
+          {children}
+        </Box>
         <Footer />
       </Box>
     </LoadingWrapper>

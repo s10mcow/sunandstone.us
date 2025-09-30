@@ -11,6 +11,7 @@ export const ImageWrapper = styled(Box)({
   backgroundColor: "grey.800",
   backgroundSize: "cover",
   backgroundPosition: "center",
+  backgroundAttachment: "fixed",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -25,6 +26,10 @@ export const ImageWrapper = styled(Box)({
     left: 0,
     background: "rgba(0,0,0,0.3)",
   },
+  // Performance optimization for mobile
+  "@media (max-width: 768px)": {
+    backgroundAttachment: "scroll",
+  },
 });
 function HeroSection() {
   const [open, setOpen] = useState(false);
@@ -32,31 +37,31 @@ function HeroSection() {
   return (
     <>
       <ContactModal isOpen={open} handleClose={() => setOpen(false)} />
-      <ImageWrapper>
+      <ImageWrapper component="section" role="banner" aria-label="Hero section">
         <Container maxWidth="lg" sx={{ zIndex: 1 }}>
           <Typography
             component="h1"
             variant="h2"
             align="center"
-            gutterBottom
-            textTransform="uppercase"
+            paragraph
             sx={{
+              color: "white",
+              px: { xs: 2, sm: 4 },
+              fontSize: {
+                xs: "2.5rem",
+                md: "3.5rem",
+              },
+              mb: 3,
               fontWeight: "bold",
               fontFamily: "SF Pro Text",
-              color: "white",
-              marginTop: {
-                xs: "20px",
-              },
-              fontSize: {
-                xs: "3rem",
-                md: "5rem",
-              },
             }}
           >
-            San and Stone
+            Simple, Easy, Headache-Free Way To Sell Your Land
           </Typography>
+
           <Typography
-            variant="h5"
+            component="p"
+            variant="h6"
             align="center"
             paragraph
             sx={{
@@ -64,21 +69,76 @@ function HeroSection() {
               px: { xs: 2, sm: 4 },
               fontSize: {
                 xs: "1rem",
-                md: "1.5rem",
+                md: "1.3rem",
               },
+              mb: 4,
             }}
           >
-            A FLORIDA-BASED GLOBAL REAL ESTATE DEVELOPMENT AND CAPITAL
-            INVESTMENT FIRM ENGAGED IN ACQUISITIONS, DEVELOPMENT AND
-            REPOSITIONING OF LAND, RESIDENTIAL, AND COMMERCIAL PROPERTIES.
+            Get a fair no-obligation offer for your unwanted land. We handle all
+            the paperwork and close safely with a trusted title company.
           </Typography>
-          <Box sx={{ textAlign: "center" }}>
+
+          <Typography
+            component="p"
+            variant="h6"
+            align="center"
+            sx={{
+              color: "white",
+              px: { xs: 2, sm: 4 },
+              fontSize: {
+                xs: "1.1rem",
+                md: "1.3rem",
+              },
+              mb: 4,
+              fontWeight: "medium",
+            }}
+          >
+            ✓ No Fees or Commissions ✓ Professional Service ✓ Trusted Process ✓
+            Fair Offers
+          </Typography>
+
+          <Box
+            sx={{
+              textAlign: "center",
+              display: "flex",
+              gap: 2,
+              justifyContent: "center",
+              flexWrap: "wrap",
+            }}
+          >
             <Button
               size="large"
-              variant={"contained"}
+              variant="contained"
+              color="primary"
               onClick={() => setOpen(true)}
+              aria-label="Contact San and Stone LLC"
+              sx={{
+                minWidth: "200px",
+                fontSize: "1.1rem",
+                py: 1.5,
+                px: 4,
+              }}
             >
-              Contact us
+              Get Offer And Free Resources
+            </Button>
+            <Button
+              size="large"
+              variant="outlined"
+              href="tel:+19043256275"
+              sx={{
+                minWidth: "200px",
+                fontSize: "1.1rem",
+                py: 1.5,
+                px: 4,
+                borderColor: "white",
+                color: "white",
+                "&:hover": {
+                  borderColor: "white",
+                  backgroundColor: "rgba(255,255,255,0.1)",
+                },
+              }}
+            >
+              Call (904) 325-6275
             </Button>
           </Box>
         </Container>

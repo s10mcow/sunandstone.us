@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sunandstone.us/sitemap.xml
+
+# Block access to admin areas (if any exist in the future)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all search engines to crawl the site
+# This is a business website that should be indexed

@@ -1,10 +1,11 @@
+import { Checkbox, FormControlLabel } from "@mui/material";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import TextField from "@mui/material/TextField";
 import { FormEvent, useState } from "react";
 
 export default function ContactModal({
@@ -25,9 +26,18 @@ export default function ContactModal({
       // @ts-ignore
       body: new URLSearchParams(data).toString(),
     })
-      // eslint-disable-next-line
-      .then(() => console.log("Form successfully submitted"))
-      .catch((error) => alert(error));
+      .then(() => {
+        // eslint-disable-next-line
+        console.log("Form successfully submitted");
+        alert("Thank you! We'll get back to you within 24 hours.");
+      })
+      .catch((error) => {
+        // eslint-disable-next-line
+        console.error("Form submission error:", error);
+        alert(
+          "There was an error submitting your form. Please try again or call us directly.",
+        );
+      });
     setLoading(false);
     handleClose(); // Close the modal upon form submission
   };
@@ -60,6 +70,7 @@ export default function ContactModal({
             fullWidth
             variant="outlined"
             name="email"
+            required
           />
           <TextField
             margin="dense"
@@ -73,16 +84,38 @@ export default function ContactModal({
           />
           <TextField
             margin="dense"
+            id="propertyCounty"
+            label="Property County"
+            type="text"
+            fullWidth
+            variant="outlined"
+            name="propertyCounty"
+          />
+          <TextField
+            margin="dense"
+            id="propertyAddress"
+            label="Property Address or APN"
+            type="text"
+            fullWidth
+            variant="outlined"
+            name="propertyAddress"
+          />
+          <TextField
+            margin="dense"
             id="message"
-            label="Message"
+            label="Notes or letter offer code"
             type="text"
             fullWidth
             multiline
             rows={4}
             variant="outlined"
             name="message"
-            required
           />
+          <FormControlLabel
+            control={<Checkbox id="acceptTerms" name="acceptTerms" />}
+            label="I concent to receive text messages from San and Stone"
+          />
+
           <DialogActions>
             <Button onClick={handleClose}>Cancel</Button>
             <Button type="submit" disabled={loading}>

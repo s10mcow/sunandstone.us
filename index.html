@@ -2,14 +2,90 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sun & Stone</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>San and Stone LLC - We Buy Land Fast in Florida | Cash Offers in 24 Hours</title>
+    <meta name="title" content="San and Stone LLC - We Buy Land Fast in Florida | Cash Offers in 24 Hours" />
+    <meta name="description" content="Sell your vacant land fast in Florida. We buy land with cash offers in 24 hours and close in 30-45 days. No realtor fees, no repairs needed. Get your free cash offer today." />
+    <meta name="keywords" content="sell land fast Florida, buy land cash, vacant land buyers, land for sale Florida, sell property quickly, cash land buyers, Florida land buyers, sell land no realtor, Sten Muchow" />
+    <meta name="author" content="San and Stone LLC" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://sunandstone.us/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sunandstone.us/" />
+    <meta property="og:title" content="San and Stone LLC - We Buy Land Fast in Florida | Cash Offers in 24 Hours" />
+    <meta property="og:description" content="Sell your vacant land fast in Florida. We buy land with cash offers in 24 hours and close in 30-45 days. No realtor fees, no repairs needed." />
+    <meta property="og:image" content="https://sunandstone.us/assets/images/landing-bg.jpg" />
+    <meta property="og:site_name" content="San and Stone LLC" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sunandstone.us/" />
+    <meta property="twitter:title" content="San and Stone LLC - We Buy Land Fast in Florida | Cash Offers in 24 Hours" />
+    <meta property="twitter:description" content="Sell your vacant land fast in Florida. We buy land with cash offers in 24 hours and close in 30-45 days. No realtor fees, no repairs needed." />
+    <meta property="twitter:image" content="https://sunandstone.us/assets/images/landing-bg.jpg" />
+    
+    <!-- Business Information -->
+    <meta name="geo.region" content="US-FL" />
+    <meta name="geo.placename" content="Florida" />
+    <meta name="geo.position" content="27.7663;-82.6404" />
+    <meta name="ICBM" content="27.7663, -82.6404" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/src/assets/images/landing-bg.jpg" as="image" type="image/jpeg" />
+    <link rel="preload" href="/src/assets/fonts/SF-Pro-Text-Bold.otf" as="font" type="font/otf" crossorigin />
+    
     <link
             rel="stylesheet"
             type="text/css"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons|Montserrat:300,400,500,700"
     />
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "San and Stone LLC",
+      "description": "We buy vacant land fast in Florida with cash offers in 24 hours and close in 30-45 days. No realtor fees, no repairs needed.",
+      "url": "https://sunandstone.us/",
+      "logo": "https://sunandstone.us/favicon.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "State",
+          "name": "Florida"
+        }
+      ],
+      "serviceType": [
+        "Land Buying",
+        "Vacant Land Purchase",
+        "Cash Land Offers",
+        "Fast Land Closing",
+        "Land Acquisition"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Sten Muchow",
+        "jobTitle": "Real Estate Investor and Entrepreneur",
+        "description": "Real estate investor and entrepreneur with expertise in computer science and mathematics, investing in real estate since 2016.",
+        "sameAs": "https://www.linkedin.com/in/stenmuchow"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
@@ -18,6 +94,16 @@
         <input type="email" name="email" />
         <input type="text" name="phone" />
         <input type="text" name="message"></input>
+        <input type="submit" />
+    </form>
+    <form name="property-inquiry" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="text" name="phone" />
+        <input type="text" name="propertyCounty" />
+        <input type="text" name="propertyAddress" />
+        <input type="text" name="propertyType" />
+        <input type="text" name="message" />
         <input type="submit" />
     </form>
     <script type="module" src="/src/main.tsx"></script>
