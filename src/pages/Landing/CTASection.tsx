@@ -68,7 +68,6 @@ function CTASection() {
       // @ts-ignore
       body: new URLSearchParams(data).toString(),
     })
-      // eslint-disable-next-line
       .then(() => {
         // eslint-disable-next-line
         console.log("Form successfully submitted");
