@@ -10,7 +10,7 @@ export const ImageWrapper = styled(Box)({
   height: "80vh",
   // Use WebP with fallback to JPEG
   backgroundImage: `url(${heroWebp}), url(${hero})`,
-  backgroundColor: "grey.800",
+  backgroundColor: "#2c3e50", // Better fallback color
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundAttachment: "fixed",
@@ -19,6 +19,8 @@ export const ImageWrapper = styled(Box)({
   justifyContent: "center",
   alignItems: "center",
   position: "relative",
+  // Optimize for LCP - ensure image loads quickly
+  willChange: "transform",
   "&:before": {
     content: '""',
     position: "absolute",
@@ -27,10 +29,29 @@ export const ImageWrapper = styled(Box)({
     top: 0,
     left: 0,
     background: "rgba(0,0,0,0.3)",
+    // Optimize overlay rendering
+    willChange: "opacity",
   },
   // Performance optimization for mobile
   "@media (max-width: 768px)": {
     backgroundAttachment: "scroll",
+    // Reduce height on mobile for better performance
+    height: "70vh",
+  },
+  // Preload hint for better performance
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundImage: `url(${heroWebp})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    opacity: 0,
+    pointerEvents: "none",
+    zIndex: -1,
   },
 });
 function HeroSection() {

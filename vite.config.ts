@@ -17,6 +17,12 @@ export default defineConfig(() => ({
       },
     },
     chunkSizeWarningLimit: 1000,
+    // Enable CSS code splitting for better performance
+    cssCodeSplit: true,
+    // Minify CSS
+    cssMinify: true,
+    // Enable source maps for debugging but optimize for production
+    sourcemap: false,
   },
   define: {
     "import.meta.env": {},
