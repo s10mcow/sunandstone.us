@@ -208,7 +208,7 @@ function TestimonialsSection() {
         {/* Trust Indicators */}
         <Box sx={{ mt: 8, textAlign: "center" }}>
           <Typography component="h3" variant="h4" gutterBottom sx={{ mb: 4 }}>
-            Trusted by Land Owners Across Florida
+            Trusted by Land Owners Across the USA
           </Typography>
           <Grid container spacing={4} justifyContent="center">
             <Grid item xs={6} sm={3}>

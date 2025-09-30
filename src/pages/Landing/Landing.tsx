@@ -1,7 +1,6 @@
 import Layout from "@/components/Layout";
 import BenefitsSection from "./BenefitsSection";
 import CTASection from "./CTASection";
-import ContactUsSection from "./ContactUsSection";
 import FAQSection from "./FAQSection";
 import HeroSection from "./HeroSection";
 import ProcessSection from "./ProcessSection";
@@ -18,7 +17,6 @@ function Landing() {
       <WhoWeAreSection />
       <FAQSection />
       <CTASection />
-      <ContactUsSection />
     </Layout>
   );
 }

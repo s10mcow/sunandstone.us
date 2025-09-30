@@ -67,9 +67,9 @@ function BenefitsSection() {
       icon: <Security />,
     },
     {
-      title: "Local Market Knowledge",
+      title: "Nationwide Experience",
       description:
-        "We understand Florida land values and work with trusted local title companies for smooth closings.",
+        "We understand land values across the USA and work with trusted title companies nationwide for smooth closings.",
       icon: <LocationOn />,
     },
     {

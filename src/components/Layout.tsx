@@ -16,17 +16,141 @@ const Footer = () => {
         py: 6,
         px: 2,
         mt: 3,
-        backgroundColor: (theme) => theme.palette.grey[200],
+        backgroundColor: (theme) => theme.palette.grey[800],
+        color: "white",
       }}
     >
-      <Typography
-        variant="body2"
-        color="textSecondary"
-        align="center"
-        sx={{ pt: 4 }}
-      >
-        © {new Date().getFullYear()} San and Stone LLC
-      </Typography>
+      <Box sx={{ maxWidth: "1200px", mx: "auto" }}>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", md: "1fr 1fr 1fr" },
+            gap: 4,
+            mb: 4,
+          }}
+        >
+          {/* Company Info */}
+          <Box>
+            <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold" }}>
+              San and Stone LLC
+            </Typography>
+            <Typography variant="body2" sx={{ mb: 2, lineHeight: 1.6 }}>
+              We buy land across the USA with fair offers and professional
+              service. Get your no-obligation offer today.
+            </Typography>
+          </Box>
+
+          {/* Contact Info */}
+          <Box>
+            <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold" }}>
+              Contact Information
+            </Typography>
+            <Typography variant="body2" sx={{ mb: 1 }}>
+              📧 hello@sunandstone.us
+            </Typography>
+            <Typography variant="body2" sx={{ mb: 1 }}>
+              📞 (904) 325-6275
+            </Typography>
+            <Typography variant="body2" sx={{ mb: 1 }}>
+              📠 (386) 309-2342
+            </Typography>
+            <Typography variant="body2">
+              📍 PO Box 1242
+              <br />
+              Flagler Beach, FL 32136
+            </Typography>
+          </Box>
+
+          {/* Quick Links */}
+          <Box>
+            <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold" }}>
+              Quick Links
+            </Typography>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              <Typography
+                variant="body2"
+                component="a"
+                href="#benefits-heading"
+                sx={{
+                  color: "inherit",
+                  textDecoration: "none",
+                  "&:hover": { textDecoration: "underline" },
+                }}
+              >
+                Why Choose Us
+              </Typography>
+              <Typography
+                variant="body2"
+                component="a"
+                href="#process-heading"
+                sx={{
+                  color: "inherit",
+                  textDecoration: "none",
+                  "&:hover": { textDecoration: "underline" },
+                }}
+              >
+                How It Works
+              </Typography>
+              <Typography
+                variant="body2"
+                component="a"
+                href="#testimonials-heading"
+                sx={{
+                  color: "inherit",
+                  textDecoration: "none",
+                  "&:hover": { textDecoration: "underline" },
+                }}
+              >
+                Testimonials
+              </Typography>
+              <Typography
+                variant="body2"
+                component="a"
+                href="#faq-heading"
+                sx={{
+                  color: "inherit",
+                  textDecoration: "none",
+                  "&:hover": { textDecoration: "underline" },
+                }}
+              >
+                FAQ
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+
+        {/* Bottom Bar */}
+        <Box
+          sx={{
+            borderTop: "1px solid rgba(255,255,255,0.1)",
+            pt: 3,
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: 2,
+          }}
+        >
+          <Typography variant="body2" color="rgba(255,255,255,0.7)">
+            © {new Date().getFullYear()} San and Stone LLC. All rights
+            reserved.
+          </Typography>
+          <Box sx={{ display: "flex", gap: 2 }}>
+            <Typography
+              variant="body2"
+              component="a"
+              href="tel:+19043256275"
+              sx={{
+                color: "rgba(255,255,255,0.7)",
+                textDecoration: "none",
+                "&:hover": { color: "white" },
+              }}
+            >
+              Call Us: (904) 325-6275
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
     </Box>
   );
 };

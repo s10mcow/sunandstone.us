@@ -91,7 +91,7 @@ function Header() {
             <NavButton onClick={() => scrollToSection("faq-heading")}>
               FAQ
             </NavButton>
-            <NavButton onClick={() => scrollToSection("contact-heading")}>
+            <NavButton onClick={() => scrollToSection("cta-heading")}>
               Contact
             </NavButton>
             <PhoneButton
