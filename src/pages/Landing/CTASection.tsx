@@ -49,9 +49,12 @@ const IconWrapper = styled(Box)(({ theme }) => ({
 
 const ContactForm = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
-  padding: theme.spacing(4),
+  padding: theme.spacing(2),
   borderRadius: theme.shape.borderRadius,
   boxShadow: theme.shadows[3],
+  [theme.breakpoints.up("sm")]: {
+    padding: theme.spacing(4),
+  },
 }));
 
 function CTASection() {
@@ -126,14 +129,27 @@ function CTASection() {
                   variant="h2"
                   gutterBottom
                   id="cta-heading"
-                  sx={{ mb: 3 }}
+                  sx={{
+                    mb: 3,
+                    fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+                    lineHeight: 1.2,
+                    wordBreak: "break-word",
+                    px: { xs: 1, sm: 2 },
+                  }}
                 >
                   Ready to Explore Real Estate Opportunities?
                 </Typography>
                 <Typography
                   component="p"
                   variant="h5"
-                  sx={{ mb: 4, opacity: 0.9 }}
+                  sx={{
+                    mb: 4,
+                    opacity: 0.9,
+                    fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
+                    lineHeight: 1.4,
+                    wordBreak: "break-word",
+                    px: { xs: 1, sm: 2 },
+                  }}
                 >
                   Whether you're looking to sell property or explore investment
                   opportunities, San and Stone is here to help you achieve your
@@ -142,9 +158,11 @@ function CTASection() {
                 <Box
                   sx={{
                     display: "flex",
+                    flexDirection: { xs: "column", sm: "row" },
                     gap: 2,
                     justifyContent: "center",
-                    flexWrap: "wrap",
+                    alignItems: "center",
+                    px: { xs: 1, sm: 2 },
                   }}
                 >
                   <Button
@@ -152,7 +170,11 @@ function CTASection() {
                     variant="contained"
                     color="primary"
                     onClick={() => setContactModalOpen(true)}
-                    sx={{ minWidth: "200px" }}
+                    sx={{
+                      minWidth: { xs: "100%", sm: "200px" },
+                      maxWidth: { xs: "280px", sm: "none" },
+                      fontSize: { xs: "0.9rem", sm: "1rem" },
+                    }}
                   >
                     Get Started Today
                   </Button>
@@ -160,7 +182,9 @@ function CTASection() {
                     size="large"
                     variant="outlined"
                     sx={{
-                      minWidth: "200px",
+                      minWidth: { xs: "100%", sm: "200px" },
+                      maxWidth: { xs: "280px", sm: "none" },
+                      fontSize: { xs: "0.8rem", sm: "1rem" },
                       borderColor: "white",
                       color: "white",
                       "&:hover": {
@@ -233,7 +257,7 @@ function CTASection() {
           </Grid>
 
           {/* Contact Form */}
-          <Grid container spacing={4}>
+          <Grid container spacing={2}>
             <Grid item xs={12} md={8} sx={{ mx: "auto" }}>
               <ContactForm>
                 <Typography
@@ -241,7 +265,12 @@ function CTASection() {
                   variant="h4"
                   align="center"
                   gutterBottom
-                  sx={{ mb: 3 }}
+                  sx={{
+                    mb: 3,
+                    fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+                    lineHeight: 1.2,
+                    px: { xs: 1, sm: 2 },
+                  }}
                 >
                   Tell Us About Your Property
                 </Typography>
@@ -250,7 +279,12 @@ function CTASection() {
                   variant="body1"
                   align="center"
                   color="text.secondary"
-                  sx={{ mb: 4 }}
+                  sx={{
+                    mb: 4,
+                    fontSize: { xs: "0.9rem", sm: "1rem" },
+                    lineHeight: 1.4,
+                    px: { xs: 1, sm: 2 },
+                  }}
                 >
                   Fill out the form below and we'll get back to you within 24
                   hours with information about how San and Stone can help with
@@ -268,7 +302,7 @@ function CTASection() {
                     name="form-name"
                     value="property-inquiry"
                   />
-                  <Grid container spacing={3}>
+                  <Grid container spacing={2}>
                     <Grid item xs={12} sm={6}>
                       <TextField
                         fullWidth
@@ -277,6 +311,13 @@ function CTASection() {
                         type="text"
                         variant="outlined"
                         required
+                        size="small"
+                        sx={{
+                          "& .MuiInputBase-input": {
+                            fontSize: { xs: "0.9rem", sm: "1rem" },
+                            padding: { xs: "12px 14px", sm: "16px 14px" },
+                          },
+                        }}
                       />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -287,6 +328,13 @@ function CTASection() {
                         type="email"
                         variant="outlined"
                         required
+                        size="small"
+                        sx={{
+                          "& .MuiInputBase-input": {
+                            fontSize: { xs: "0.9rem", sm: "1rem" },
+                            padding: { xs: "12px 14px", sm: "16px 14px" },
+                          },
+                        }}
                       />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -297,6 +345,13 @@ function CTASection() {
                         type="tel"
                         variant="outlined"
                         required
+                        size="small"
+                        sx={{
+                          "& .MuiInputBase-input": {
+                            fontSize: { xs: "0.9rem", sm: "1rem" },
+                            padding: { xs: "12px 14px", sm: "16px 14px" },
+                          },
+                        }}
                       />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -306,6 +361,13 @@ function CTASection() {
                         name="propertyCounty"
                         type="text"
                         variant="outlined"
+                        size="small"
+                        sx={{
+                          "& .MuiInputBase-input": {
+                            fontSize: { xs: "0.9rem", sm: "1rem" },
+                            padding: { xs: "12px 14px", sm: "16px 14px" },
+                          },
+                        }}
                       />
                     </Grid>
                     <Grid item xs={12}>
@@ -315,6 +377,13 @@ function CTASection() {
                         name="propertyAddress"
                         type="text"
                         variant="outlined"
+                        size="small"
+                        sx={{
+                          "& .MuiInputBase-input": {
+                            fontSize: { xs: "0.9rem", sm: "1rem" },
+                            padding: { xs: "12px 14px", sm: "16px 14px" },
+                          },
+                        }}
                       />
                     </Grid>
                     <Grid item xs={12}>
@@ -324,8 +393,15 @@ function CTASection() {
                         name="message"
                         type="text"
                         multiline
-                        rows={4}
+                        rows={3}
                         variant="outlined"
+                        size="small"
+                        sx={{
+                          "& .MuiInputBase-input": {
+                            fontSize: { xs: "0.9rem", sm: "1rem" },
+                            padding: { xs: "12px 14px", sm: "16px 14px" },
+                          },
+                        }}
                       />
                     </Grid>
                     <Grid item xs={12}>
@@ -336,7 +412,12 @@ function CTASection() {
                           variant="contained"
                           color="primary"
                           disabled={loading}
-                          sx={{ minWidth: "200px" }}
+                          sx={{
+                            minWidth: { xs: "100%", sm: "200px" },
+                            maxWidth: { xs: "280px", sm: "none" },
+                            fontSize: { xs: "0.9rem", sm: "1rem" },
+                            py: { xs: 1, sm: 1.5 },
+                          }}
                         >
                           {loading ? "Sending..." : "Send Message"}
                         </Button>

@@ -1,7 +1,7 @@
 import ContactModal from "@/components/ContactModal";
 import hero from "@assets/images/landing-bg.jpg";
 import heroWebp from "@assets/images/landing-bg.webp";
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
 
@@ -61,7 +61,7 @@ function HeroSection() {
     <>
       <ContactModal isOpen={open} handleClose={() => setOpen(false)} />
       <ImageWrapper component="section" role="banner" aria-label="Hero section">
-        <Container maxWidth="lg" sx={{ zIndex: 1 }}>
+        <Box sx={{ zIndex: 1, width: "100%", px: { xs: 2, sm: 4, md: 6 } }}>
           <Typography
             component="h1"
             variant="h2"
@@ -69,17 +69,21 @@ function HeroSection() {
             paragraph
             sx={{
               color: "white",
-              px: { xs: 2, sm: 4 },
+              px: { xs: 1, sm: 2 },
               fontSize: {
                 xs: "2.5rem",
+                sm: "2.8rem",
                 md: "3.5rem",
               },
               mb: 3,
               fontWeight: "bold",
               fontFamily: "SF Pro Text",
+              lineHeight: 1.1,
+              wordBreak: "break-word",
+              textTransform: "uppercase",
             }}
           >
-            Simple, Easy, Headache-Free Way To Sell Your Land
+            San and Stone
           </Typography>
 
           <Typography
@@ -89,16 +93,22 @@ function HeroSection() {
             paragraph
             sx={{
               color: "white",
-              px: { xs: 2, sm: 4 },
+              px: { xs: 1, sm: 2 },
               fontSize: {
                 xs: "1rem",
-                md: "1.3rem",
+                sm: "1.3rem",
+                md: "1.5rem",
               },
               mb: 4,
+              lineHeight: 1.4,
+              wordBreak: "break-word",
+              maxWidth: "800px",
+              mx: "auto",
             }}
           >
-            Get a fair no-obligation offer for your unwanted land. We handle all
-            the paperwork and close safely with a trusted title company.
+            A FLORIDA-BASED GLOBAL REAL ESTATE DEVELOPMENT AND CAPITAL
+            INVESTMENT FIRM ENGAGED IN ACQUISITIONS, DEVELOPMENT AND
+            REPOSITIONING OF LAND, RESIDENTIAL, AND COMMERCIAL PROPERTIES.
           </Typography>
 
           <Typography
@@ -107,26 +117,31 @@ function HeroSection() {
             align="center"
             sx={{
               color: "white",
-              px: { xs: 2, sm: 4 },
+              px: { xs: 1, sm: 2 },
               fontSize: {
-                xs: "1.1rem",
+                xs: "0.8rem",
+                sm: "1rem",
                 md: "1.3rem",
               },
               mb: 4,
               fontWeight: "medium",
+              lineHeight: 1.4,
+              wordBreak: "break-word",
             }}
           >
-            ✓ No Fees or Commissions ✓ Professional Service ✓ Trusted Process ✓
-            Fair Offers
+            ✓ Multi-Family Development ✓ Land Acquisition ✓ Commercial
+            Properties ✓ Investment Opportunities
           </Typography>
 
           <Box
             sx={{
               textAlign: "center",
               display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
               gap: 2,
               justifyContent: "center",
-              flexWrap: "wrap",
+              alignItems: "center",
+              px: { xs: 1, sm: 0 },
             }}
           >
             <Button
@@ -134,25 +149,27 @@ function HeroSection() {
               variant="contained"
               color="primary"
               onClick={() => setOpen(true)}
-              aria-label="Contact San and Stone LLC"
+              aria-label="Contact San and Stone"
               sx={{
-                minWidth: "200px",
-                fontSize: "1.1rem",
+                minWidth: { xs: "100%", sm: "200px" },
+                maxWidth: { xs: "250px", sm: "none" },
+                fontSize: { xs: "0.9rem", sm: "1.1rem" },
                 py: 1.5,
-                px: 4,
+                px: 3,
               }}
             >
-              Get Offer And Free Resources
+              Contact Us
             </Button>
             <Button
               size="large"
               variant="outlined"
               href="tel:+19043256275"
               sx={{
-                minWidth: "200px",
-                fontSize: "1.1rem",
+                minWidth: { xs: "100%", sm: "200px" },
+                maxWidth: { xs: "250px", sm: "none" },
+                fontSize: { xs: "0.8rem", sm: "1.1rem" },
                 py: 1.5,
-                px: 4,
+                px: 3,
                 borderColor: "white",
                 color: "white",
                 "&:hover": {
@@ -164,7 +181,7 @@ function HeroSection() {
               Call (904) 325-6275
             </Button>
           </Box>
-        </Container>
+        </Box>
       </ImageWrapper>
     </>
   );

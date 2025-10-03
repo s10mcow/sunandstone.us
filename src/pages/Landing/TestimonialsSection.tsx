@@ -15,11 +15,14 @@ const TestimonialCard = styled(Card)(({ theme }) => ({
   height: "100%",
   display: "flex",
   flexDirection: "column",
-  padding: theme.spacing(3),
+  padding: theme.spacing(2),
   position: "relative",
   backgroundColor: theme.palette.background.paper,
   boxShadow: theme.shadows[3],
   transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+  [theme.breakpoints.up("sm")]: {
+    padding: theme.spacing(3),
+  },
   "&:hover": {
     transform: "translateY(-4px)",
     boxShadow: theme.shadows[8],
@@ -27,21 +30,32 @@ const TestimonialCard = styled(Card)(({ theme }) => ({
 }));
 
 const QuoteIcon = styled(FormatQuote)(({ theme }) => ({
-  fontSize: "3rem",
+  fontSize: "2rem",
   color: theme.palette.primary.main,
   opacity: 0.3,
   position: "absolute",
-  top: theme.spacing(2),
-  right: theme.spacing(2),
+  top: theme.spacing(1),
+  right: theme.spacing(1),
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "3rem",
+    top: theme.spacing(2),
+    right: theme.spacing(2),
+  },
 }));
 
 const StarRating = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
-  marginBottom: theme.spacing(2),
+  marginBottom: theme.spacing(1),
+  [theme.breakpoints.up("sm")]: {
+    marginBottom: theme.spacing(2),
+  },
   "& svg": {
     color: "#FFD700",
-    fontSize: "1.5rem",
+    fontSize: "1.2rem",
+    [theme.breakpoints.up("sm")]: {
+      fontSize: "1.5rem",
+    },
   },
 }));
 
@@ -123,15 +137,20 @@ function TestimonialsSection() {
       sx={{ py: 8 }}
     >
       <Container>
-        <Grid container spacing={4}>
+        <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Box sx={{ textAlign: "center", mb: 6 }}>
+            <Box sx={{ textAlign: "center", mb: { xs: 4, sm: 6 } }}>
               <Typography
                 component="h2"
                 variant="h2"
                 gutterBottom
                 id="testimonials-heading"
-                sx={{ mb: 2 }}
+                sx={{
+                  mb: 2,
+                  fontSize: { xs: "1.8rem", sm: "2.5rem", md: "3rem" },
+                  lineHeight: 1.2,
+                  px: { xs: 1, sm: 2 },
+                }}
               >
                 What Our Clients Say
               </Typography>
@@ -139,10 +158,16 @@ function TestimonialsSection() {
                 component="p"
                 variant="h6"
                 color="text.secondary"
-                sx={{ maxWidth: "800px", mx: "auto" }}
+                sx={{
+                  maxWidth: "800px",
+                  mx: "auto",
+                  fontSize: { xs: "0.9rem", sm: "1.1rem", md: "1.25rem" },
+                  lineHeight: 1.4,
+                  px: { xs: 1, sm: 2 },
+                }}
               >
                 Don't just take our word for it. Here's what land owners across
-                the USA have to say about selling their land to San and Stone.
+                the USA have to say about selling their land to San and Stone .
               </Typography>
             </Box>
           </Grid>
@@ -156,7 +181,7 @@ function TestimonialsSection() {
                     flexGrow: 1,
                     display: "flex",
                     flexDirection: "column",
-                    pt: 4,
+                    pt: { xs: 2, sm: 4 },
                   }}
                 >
                   <StarRating>{renderStars(testimonial.rating)}</StarRating>
@@ -167,19 +192,32 @@ function TestimonialsSection() {
                     sx={{
                       flexGrow: 1,
                       fontStyle: "italic",
-                      mb: 3,
-                      lineHeight: 1.6,
+                      mb: { xs: 2, sm: 3 },
+                      lineHeight: 1.5,
+                      fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem" },
                     }}
                   >
                     "{testimonial.text}"
                   </Typography>
 
                   <Box sx={{ textAlign: "center", mt: "auto" }}>
-                    <ClientAvatar>{testimonial.initials}</ClientAvatar>
+                    <ClientAvatar
+                      sx={{
+                        width: { xs: 40, sm: 60 },
+                        height: { xs: 40, sm: 60 },
+                        fontSize: { xs: "1rem", sm: "1.5rem" },
+                      }}
+                    >
+                      {testimonial.initials}
+                    </ClientAvatar>
                     <Typography
                       component="h4"
                       variant="h6"
-                      sx={{ fontWeight: "bold", mb: 0.5 }}
+                      sx={{
+                        fontWeight: "bold",
+                        mb: 0.5,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      }}
                     >
                       {testimonial.name}
                     </Typography>
@@ -187,6 +225,7 @@ function TestimonialsSection() {
                       component="p"
                       variant="body2"
                       color="text.secondary"
+                      sx={{ fontSize: { xs: "0.75rem", sm: "0.875rem" } }}
                     >
                       {testimonial.role}
                     </Typography>
@@ -194,7 +233,7 @@ function TestimonialsSection() {
                       component="p"
                       variant="body2"
                       color="primary.main"
-                      sx={{ fontSize: "0.875rem" }}
+                      sx={{ fontSize: { xs: "0.75rem", sm: "0.875rem" } }}
                     >
                       {testimonial.location}
                     </Typography>

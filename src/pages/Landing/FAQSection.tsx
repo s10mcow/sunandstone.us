@@ -31,13 +31,19 @@ const StyledAccordionSummary = styled(AccordionSummary)(({ theme }) => ({
     color: theme.palette.primary.contrastText,
   },
   "& .MuiAccordionSummary-content": {
-    margin: `${theme.spacing(2)} 0`,
+    margin: `${theme.spacing(1)} 0`,
+    [theme.breakpoints.up("sm")]: {
+      margin: `${theme.spacing(2)} 0`,
+    },
   },
 }));
 
 const StyledAccordionDetails = styled(AccordionDetails)(({ theme }) => ({
-  padding: theme.spacing(3),
+  padding: theme.spacing(2),
   borderTop: `1px solid ${theme.palette.divider}`,
+  [theme.breakpoints.up("sm")]: {
+    padding: theme.spacing(3),
+  },
 }));
 
 function FAQSection() {
@@ -95,7 +101,7 @@ function FAQSection() {
       id: "panel8",
       question: "What makes San and Stone different from other land buyers?",
       answer:
-        "We combine professional expertise with personal service. Our background in data analysis ensures fair pricing, while our commitment to transparency means no surprises. We work with established title companies and maintain clear communication throughout the process.",
+        "We combine professional expertise with personal service. Our background in real estate development and investment ensures fair pricing, while our commitment to transparency means no surprises. We work with established title companies and maintain clear communication throughout the process.",
     },
     {
       id: "panel9",
@@ -118,15 +124,20 @@ function FAQSection() {
       sx={{ py: 8, backgroundColor: "grey.50" }}
     >
       <Container>
-        <Grid container spacing={4}>
+        <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Box sx={{ textAlign: "center", mb: 6 }}>
+            <Box sx={{ textAlign: "center", mb: { xs: 4, sm: 6 } }}>
               <Typography
                 component="h2"
                 variant="h2"
                 gutterBottom
                 id="faq-heading"
-                sx={{ mb: 2 }}
+                sx={{
+                  mb: 2,
+                  fontSize: { xs: "1.8rem", sm: "2.5rem", md: "3rem" },
+                  lineHeight: 1.2,
+                  px: { xs: 1, sm: 2 },
+                }}
               >
                 Frequently Asked Questions
               </Typography>
@@ -134,7 +145,13 @@ function FAQSection() {
                 component="p"
                 variant="h6"
                 color="text.secondary"
-                sx={{ maxWidth: "800px", mx: "auto" }}
+                sx={{
+                  maxWidth: "800px",
+                  mx: "auto",
+                  fontSize: { xs: "0.9rem", sm: "1.1rem", md: "1.25rem" },
+                  lineHeight: 1.4,
+                  px: { xs: 1, sm: 2 },
+                }}
               >
                 Get answers to common questions about selling your land to San
                 and Stone. Don't see your question? Contact us directly.
@@ -157,7 +174,11 @@ function FAQSection() {
                   <Typography
                     component="h3"
                     variant="h6"
-                    sx={{ fontWeight: "medium" }}
+                    sx={{
+                      fontWeight: "medium",
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      lineHeight: 1.3,
+                    }}
                   >
                     {faq.question}
                   </Typography>
@@ -166,7 +187,10 @@ function FAQSection() {
                   <Typography
                     component="p"
                     variant="body1"
-                    sx={{ lineHeight: 1.7 }}
+                    sx={{
+                      lineHeight: 1.6,
+                      fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem" },
+                    }}
                   >
                     {faq.answer}
                   </Typography>
@@ -176,26 +200,50 @@ function FAQSection() {
           </Grid>
 
           <Grid item xs={12}>
-            <Box sx={{ textAlign: "center", mt: 4 }}>
-              <Typography variant="h5" gutterBottom>
+            <Box sx={{ textAlign: "center", mt: { xs: 3, sm: 4 } }}>
+              <Typography
+                variant="h5"
+                gutterBottom
+                sx={{
+                  fontSize: { xs: "1.2rem", sm: "1.5rem", md: "1.75rem" },
+                  lineHeight: 1.2,
+                  px: { xs: 1, sm: 2 },
+                }}
+              >
                 Still have questions?
               </Typography>
-              <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+              <Typography
+                variant="body1"
+                color="text.secondary"
+                sx={{
+                  mb: 3,
+                  fontSize: { xs: "0.9rem", sm: "1rem" },
+                  lineHeight: 1.4,
+                  px: { xs: 1, sm: 2 },
+                }}
+              >
                 We're here to help. Contact us for personalized answers to your
                 specific situation.
               </Typography>
               <Box
                 sx={{
                   display: "flex",
+                  flexDirection: { xs: "column", sm: "row" },
                   justifyContent: "center",
-                  gap: 2,
+                  gap: { xs: 1, sm: 2 },
                   flexWrap: "wrap",
                 }}
               >
-                <Typography variant="body1">
+                <Typography
+                  variant="body1"
+                  sx={{ fontSize: { xs: "0.85rem", sm: "1rem" } }}
+                >
                   📧 <strong>Email:</strong> hello@sunandstone.us
                 </Typography>
-                <Typography variant="body1">
+                <Typography
+                  variant="body1"
+                  sx={{ fontSize: { xs: "0.85rem", sm: "1rem" } }}
+                >
                   📞 <strong>Phone:</strong> (904) 325-6275
                 </Typography>
               </Box>

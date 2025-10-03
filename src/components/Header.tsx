@@ -21,6 +21,8 @@ const Logo = styled(Box)(() => ({
   alignItems: "center",
   flexGrow: 1,
   cursor: "pointer",
+  minWidth: 0, // Allow shrinking
+  overflow: "hidden",
 }));
 
 const LogoImage = styled("img")(({ theme }) => ({
@@ -29,17 +31,21 @@ const LogoImage = styled("img")(({ theme }) => ({
   marginRight: theme.spacing(2),
 }));
 
-const LogoText = styled(Typography)(() => ({
+const LogoText = styled(Typography)({
   fontFamily: "SF Pro Text, Arial, sans-serif",
   fontWeight: "bold",
-  fontSize: "1.5rem",
+  fontSize: { xs: "0.7rem", sm: "0.8rem", md: "1rem" },
   textTransform: "uppercase",
   textDecoration: "none",
   color: "black",
+  whiteSpace: "nowrap",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  maxWidth: { xs: "100px", sm: "120px", md: "none" },
   "&:hover": {
     textDecoration: "none",
   },
-}));
+});
 
 const NavButton = styled(Button)(({ theme }) => ({
   marginLeft: theme.spacing(2),
@@ -72,8 +78,8 @@ function Header() {
       <Container maxWidth="lg">
         <Toolbar disableGutters>
           <Logo onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-            <LogoImage src="/favicon.png" alt="San & Stone LLC Logo" />
-            <LogoText>San & Stone LLC</LogoText>
+            <LogoImage src="/favicon.png" alt="San and Stone Logo" />
+            <LogoText>San and Stone</LogoText>
           </Logo>
 
           <Box
@@ -106,14 +112,25 @@ function Header() {
 
           {/* Mobile menu - simplified for now */}
           <Box
-            sx={{ display: { xs: "flex", md: "none" }, alignItems: "center" }}
+            sx={{
+              display: { xs: "flex", md: "none" },
+              alignItems: "center",
+              flexShrink: 0,
+              minWidth: 0,
+            }}
           >
             <PhoneButton
               variant="contained"
               size="small"
               href="tel:+19043256275"
+              sx={{
+                fontSize: "0.75rem",
+                px: 1.5,
+                py: 0.5,
+                minWidth: "auto",
+              }}
             >
-              Call Us
+              Call
             </PhoneButton>
           </Box>
         </Toolbar>

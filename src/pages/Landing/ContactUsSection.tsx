@@ -75,19 +75,19 @@ function ContactUsSection() {
               >
                 <Email
                   href="mailto:hello@sunandstone.us"
-                  aria-label="Send email to San and Stone LLC"
+                  aria-label="Send email to San and Stone"
                 >
                   hello@sunandstone.us
                 </Email>
                 <PhoneLine
                   href="tel:+19043256275"
-                  aria-label="Call San and Stone LLC"
+                  aria-label="Call San and Stone"
                 >
                   Phone: (904) 325-6275
                 </PhoneLine>
                 <PhoneLine
                   href="tel:+13863092342"
-                  aria-label="Fax San and Stone LLC"
+                  aria-label="Fax San and Stone"
                 >
                   Fax: (386) 309-2342
                 </PhoneLine>

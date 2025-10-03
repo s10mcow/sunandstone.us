@@ -21,9 +21,12 @@ const BenefitCard = styled(Card)(({ theme }) => ({
   height: "100%",
   display: "flex",
   flexDirection: "column",
-  padding: theme.spacing(3),
+  padding: theme.spacing(2),
   textAlign: "center",
   transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+  [theme.breakpoints.up("sm")]: {
+    padding: theme.spacing(3),
+  },
   "&:hover": {
     transform: "translateY(-8px)",
     boxShadow: theme.shadows[8],
@@ -33,10 +36,16 @@ const BenefitCard = styled(Card)(({ theme }) => ({
 const IconWrapper = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
-  marginBottom: theme.spacing(2),
+  marginBottom: theme.spacing(1),
+  [theme.breakpoints.up("sm")]: {
+    marginBottom: theme.spacing(2),
+  },
   "& svg": {
-    fontSize: "3rem",
+    fontSize: "2.5rem",
     color: theme.palette.primary.main,
+    [theme.breakpoints.up("sm")]: {
+      fontSize: "3rem",
+    },
   },
 }));
 
@@ -87,15 +96,20 @@ function BenefitsSection() {
       sx={{ py: 8 }}
     >
       <Container>
-        <Grid container spacing={4}>
+        <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Box sx={{ textAlign: "center", mb: 6 }}>
+            <Box sx={{ textAlign: "center", mb: { xs: 4, sm: 6 } }}>
               <Typography
                 component="h2"
                 variant="h2"
                 gutterBottom
                 id="benefits-heading"
-                sx={{ mb: 2 }}
+                sx={{
+                  mb: 2,
+                  fontSize: { xs: "1.8rem", sm: "2.5rem", md: "3rem" },
+                  lineHeight: 1.2,
+                  px: { xs: 1, sm: 2 },
+                }}
               >
                 Why Sell Your Land to San and Stone
               </Typography>
@@ -103,7 +117,13 @@ function BenefitsSection() {
                 component="p"
                 variant="h6"
                 color="text.secondary"
-                sx={{ maxWidth: "800px", mx: "auto" }}
+                sx={{
+                  maxWidth: "800px",
+                  mx: "auto",
+                  fontSize: { xs: "0.9rem", sm: "1.1rem", md: "1.25rem" },
+                  lineHeight: 1.4,
+                  px: { xs: 1, sm: 2 },
+                }}
               >
                 Working with us allows you to sell your land without having to
                 put in any time or effort in a worry-free manner. Here's what
@@ -123,7 +143,12 @@ function BenefitsSection() {
                     component="h3"
                     variant="h5"
                     gutterBottom
-                    sx={{ fontWeight: "bold", mb: 2 }}
+                    sx={{
+                      fontWeight: "bold",
+                      mb: { xs: 1, sm: 2 },
+                      fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
+                      lineHeight: 1.3,
+                    }}
                   >
                     {benefit.title}
                   </Typography>
@@ -131,7 +156,11 @@ function BenefitsSection() {
                     component="p"
                     variant="body1"
                     color="text.secondary"
-                    sx={{ flexGrow: 1 }}
+                    sx={{
+                      flexGrow: 1,
+                      fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem" },
+                      lineHeight: 1.5,
+                    }}
                   >
                     {benefit.description}
                   </Typography>

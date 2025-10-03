@@ -24,9 +24,12 @@ const ProcessCard = styled(Card)(({ theme }) => ({
   height: "100%",
   display: "flex",
   flexDirection: "column",
-  padding: theme.spacing(3),
+  padding: theme.spacing(2),
   textAlign: "center",
   position: "relative",
+  [theme.breakpoints.up("sm")]: {
+    padding: theme.spacing(3),
+  },
   "&::before": {
     content: '""',
     position: "absolute",
@@ -39,26 +42,38 @@ const ProcessCard = styled(Card)(({ theme }) => ({
 }));
 
 const StepNumber = styled(Box)(({ theme }) => ({
-  width: "60px",
-  height: "60px",
+  width: "50px",
+  height: "50px",
   borderRadius: "50%",
   backgroundColor: theme.palette.primary.main,
   color: "white",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  fontSize: "1.5rem",
+  fontSize: "1.2rem",
   fontWeight: "bold",
-  margin: "0 auto 16px auto",
+  margin: "0 auto 12px auto",
+  [theme.breakpoints.up("sm")]: {
+    width: "60px",
+    height: "60px",
+    fontSize: "1.5rem",
+    margin: "0 auto 16px auto",
+  },
 }));
 
 const IconWrapper = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
-  marginBottom: theme.spacing(2),
+  marginBottom: theme.spacing(1),
+  [theme.breakpoints.up("sm")]: {
+    marginBottom: theme.spacing(2),
+  },
   "& svg": {
-    fontSize: "2.5rem",
+    fontSize: "2rem",
     color: theme.palette.primary.main,
+    [theme.breakpoints.up("sm")]: {
+      fontSize: "2.5rem",
+    },
   },
 }));
 
@@ -109,15 +124,20 @@ function ProcessSection() {
       sx={{ py: 8, backgroundColor: "grey.50" }}
     >
       <Container>
-        <Grid container spacing={4}>
+        <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Box sx={{ textAlign: "center", mb: 6 }}>
+            <Box sx={{ textAlign: "center", mb: { xs: 4, sm: 6 } }}>
               <Typography
                 component="h2"
                 variant="h2"
                 gutterBottom
                 id="process-heading"
-                sx={{ mb: 2 }}
+                sx={{
+                  mb: 2,
+                  fontSize: { xs: "1.8rem", sm: "2.5rem", md: "3rem" },
+                  lineHeight: 1.2,
+                  px: { xs: 1, sm: 2 },
+                }}
               >
                 How We Buy Your Land
               </Typography>
@@ -125,7 +145,13 @@ function ProcessSection() {
                 component="p"
                 variant="h6"
                 color="text.secondary"
-                sx={{ maxWidth: "800px", mx: "auto" }}
+                sx={{
+                  maxWidth: "800px",
+                  mx: "auto",
+                  fontSize: { xs: "0.9rem", sm: "1.1rem", md: "1.25rem" },
+                  lineHeight: 1.4,
+                  px: { xs: 1, sm: 2 },
+                }}
               >
                 Our process is clear, transparent, and designed to make selling
                 your land as simple and stress-free as possible.
@@ -145,7 +171,12 @@ function ProcessSection() {
                     component="h3"
                     variant="h5"
                     gutterBottom
-                    sx={{ fontWeight: "bold", mb: 2 }}
+                    sx={{
+                      fontWeight: "bold",
+                      mb: { xs: 1, sm: 2 },
+                      fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
+                      lineHeight: 1.3,
+                    }}
                   >
                     {step.title}
                   </Typography>
@@ -153,7 +184,11 @@ function ProcessSection() {
                     component="p"
                     variant="body1"
                     color="text.secondary"
-                    sx={{ flexGrow: 1 }}
+                    sx={{
+                      flexGrow: 1,
+                      fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem" },
+                      lineHeight: 1.5,
+                    }}
                   >
                     {step.description}
                   </Typography>
@@ -164,13 +199,23 @@ function ProcessSection() {
         </Grid>
 
         {/* Timeline View for Desktop */}
-        <Box sx={{ mt: 8, display: { xs: "none", md: "block" } }}>
+        <Box
+          sx={{
+            mt: { xs: 4, sm: 6, md: 8 },
+            display: { xs: "none", md: "block" },
+          }}
+        >
           <Typography
             component="h3"
             variant="h4"
             align="center"
             gutterBottom
-            sx={{ mb: 4 }}
+            sx={{
+              mb: 4,
+              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+              lineHeight: 1.2,
+              px: { xs: 1, sm: 2 },
+            }}
           >
             Typical Timeline: 30-45 Days
           </Typography>

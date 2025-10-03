@@ -30,11 +30,12 @@ const Footer = () => {
           {/* Company Info */}
           <Box>
             <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold" }}>
-              San and Stone LLC
+              San and Stone
             </Typography>
             <Typography variant="body2" sx={{ mb: 2, lineHeight: 1.6 }}>
-              We buy land across the USA with fair offers and professional
-              service. Get your no-obligation offer today.
+              A Florida-based global real estate development and capital
+              investment firm engaged in acquisitions, development and
+              repositioning of land, residential, and commercial properties.
             </Typography>
           </Box>
 
@@ -130,8 +131,7 @@ const Footer = () => {
           }}
         >
           <Typography variant="body2" color="rgba(255,255,255,0.7)">
-            © {new Date().getFullYear()} San and Stone LLC. All rights
-            reserved.
+            © {new Date().getFullYear()} San and Stone. All rights reserved.
           </Typography>
           <Box sx={{ display: "flex", gap: 2 }}>
             <Typography
