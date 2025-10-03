@@ -1,6 +1,11 @@
 [[redirects]]
-  from = "/*"
+  from = "https://sunandstone.us/*"
   to = "https://sanandstone.us/:splat"
   status = 301
   force = true
-  conditions = { Host = ["sunandstone.us", "www.sunandstone.us"] }
+
+[[redirects]]
+  from = "https://www.sunandstone.us/*"
+  to = "https://sanandstone.us/:splat"
+  status = 301
+  force = true
