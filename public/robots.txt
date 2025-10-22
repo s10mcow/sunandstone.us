@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://sunandstone.us/sitemap.xml
+Sitemap: https://sanandstone.us/sitemap.xml
 
 # Block access to admin areas (if any exist in the future)
 Disallow: /admin/
