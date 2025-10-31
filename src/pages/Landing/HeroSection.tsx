@@ -36,7 +36,7 @@ export const ImageWrapper = styled(Box)({
   "@media (max-width: 768px)": {
     backgroundAttachment: "scroll",
     // Reduce height on mobile for better performance
-    height: "70vh",
+    height: "100vh",
   },
   // Preload hint for better performance
   "&::after": {
@@ -61,7 +61,13 @@ function HeroSection() {
     <>
       <ContactModal isOpen={open} handleClose={() => setOpen(false)} />
       <ImageWrapper component="section" role="banner" aria-label="Hero section">
-        <Box sx={{ zIndex: 1, width: "100%", px: { xs: 2, sm: 4, md: 6 } }}>
+        <Box
+          sx={{
+            zIndex: 1,
+            width: "100%",
+            px: { xs: 1, sm: 4, md: 6 },
+          }}
+        >
           <Typography
             component="h1"
             variant="h2"
@@ -69,7 +75,7 @@ function HeroSection() {
             paragraph
             sx={{
               color: "white",
-              px: { xs: 1, sm: 2 },
+              px: { xs: 0, sm: 2 },
               fontSize: {
                 xs: "2.5rem",
                 sm: "2.8rem",
@@ -179,6 +185,36 @@ function HeroSection() {
               }}
             >
               Call (904) 325-6275
+            </Button>
+          </Box>
+          <Box
+            sx={{
+              textAlign: "center",
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              gap: 2,
+              justifyContent: "center",
+              alignItems: "center",
+              px: { xs: 1, sm: 0 },
+              mt: 2,
+            }}
+          >
+            <Button
+              variant="contained"
+              size="large"
+              href="https://share.google/JCtw1BhgsvTKZ2mMx"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                minWidth: { xs: "100%", sm: "200px" },
+                maxWidth: { xs: "250px", sm: "none" },
+                py: 1.5,
+                px: 3,
+                fontSize: { xs: "0.8rem", sm: "1.1rem" },
+                textTransform: "uppercase",
+              }}
+            >
+              View Our Google Reviews ⭐⭐⭐⭐⭐
             </Button>
           </Box>
         </Box>
