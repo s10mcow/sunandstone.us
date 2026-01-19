@@ -40,16 +40,16 @@ const CloseButton = styled(IconButton)(({ theme }) => ({
   },
 }));
 
-export default function QRSourceModal() {
+export default function EmailSourceModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // Check for the source=qr query parameter
+    // Check for the source=email query parameter
     const urlParams = new URLSearchParams(window.location.search);
     const source = urlParams.get("source");
 
-    if (source === "qr") {
+    if (source === "email") {
       setIsOpen(true);
     }
   }, []);
@@ -95,7 +95,7 @@ export default function QRSourceModal() {
           <Close />
         </CloseButton>
         <Typography variant="h5" component="h2" sx={{ fontWeight: 700, mb: 1 }}>
-          Thanks for scanning our QR code!
+          Thanks for clicking through from our email!
         </Typography>
         <Typography variant="body1" sx={{ opacity: 0.95 }}>
           Let's connect and get started on your free offer.
