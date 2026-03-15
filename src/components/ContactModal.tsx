@@ -39,6 +39,10 @@ export default function ContactModal({
       .then(() => {
         // eslint-disable-next-line
         console.log("Form successfully submitted");
+        window.gtag?.("event", "form_submit", {
+          form_name: "contact",
+          source: "modal",
+        });
         alert("Thank you! We'll get back to you within 24 hours.");
         handleClose();
       })

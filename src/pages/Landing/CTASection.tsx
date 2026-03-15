@@ -84,6 +84,10 @@ function CTASection() {
       .then(() => {
         // eslint-disable-next-line
         console.log("Form successfully submitted");
+        window.gtag?.("event", "form_submit", {
+          form_name: "property-inquiry",
+          source: "cta_section",
+        });
         alert("Thank you! We'll get back to you within 24 hours.");
       })
       .catch((error) => {
@@ -179,7 +183,12 @@ function CTASection() {
                     size="large"
                     variant="contained"
                     color="primary"
-                    onClick={() => setContactModalOpen(true)}
+                    onClick={() => {
+                      window.gtag?.("event", "modal_open", {
+                        source: "cta_get_started",
+                      });
+                      setContactModalOpen(true);
+                    }}
                     sx={{
                       minWidth: { xs: "100%", sm: "200px" },
                       maxWidth: { xs: "280px", sm: "none" },
@@ -203,6 +212,11 @@ function CTASection() {
                       },
                     }}
                     href="tel:+19043256275"
+                    onClick={() =>
+                      window.gtag?.("event", "phone_call_click", {
+                        location: "cta",
+                      })
+                    }
                   >
                     Call (904) 325-6275
                   </Button>

@@ -51,6 +51,7 @@ export default function EmailSourceModal() {
 
     if (source === "email") {
       setIsOpen(true);
+      window.gtag?.("event", "modal_open", { source: "email" });
     }
   }, []);
 
@@ -85,6 +86,10 @@ export default function EmailSourceModal() {
       .then(() => {
         // eslint-disable-next-line
         console.log("Form successfully submitted");
+        window.gtag?.("event", "form_submit", {
+          form_name: "contact",
+          source: "email",
+        });
         alert("Thank you! We'll get back to you within 24 hours.");
         handleClose();
       })

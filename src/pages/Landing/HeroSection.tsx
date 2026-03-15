@@ -154,7 +154,10 @@ function HeroSection() {
               size="large"
               variant="contained"
               color="primary"
-              onClick={() => setOpen(true)}
+              onClick={() => {
+                window.gtag?.("event", "modal_open", { source: "hero_cta" });
+                setOpen(true);
+              }}
               aria-label="Contact San and Stone"
               sx={{
                 minWidth: { xs: "100%", sm: "200px" },
@@ -169,6 +172,9 @@ function HeroSection() {
             <Button
               size="large"
               variant="outlined"
+              onClick={() =>
+                window.gtag?.("event", "phone_call_click", { location: "hero" })
+              }
               href="tel:+19043256275"
               sx={{
                 minWidth: { xs: "100%", sm: "200px" },
@@ -205,6 +211,9 @@ function HeroSection() {
               href="https://share.google/JCtw1BhgsvTKZ2mMx"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                window.gtag?.("event", "reviews_click", { location: "hero" })
+              }
               sx={{
                 minWidth: { xs: "100%", sm: "200px" },
                 maxWidth: { xs: "250px", sm: "none" },

@@ -47,6 +47,11 @@ function TestimonialsSection() {
               href="https://share.google/JCtw1BhgsvTKZ2mMx"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                window.gtag?.("event", "reviews_click", {
+                  location: "testimonials",
+                })
+              }
               sx={{
                 px: 6,
                 py: 2,
