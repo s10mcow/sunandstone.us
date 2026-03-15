@@ -1,5 +1,6 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+import viteCompression from "vite-plugin-compression";
 import eslintPlugin from "vite-plugin-eslint";
 import viteImagemin from "vite-plugin-imagemin";
 import svgrPlugin from "vite-plugin-svgr";
@@ -54,6 +55,8 @@ export default defineConfig(() => ({
       pngquant: { quality: [0.8, 0.9] },
       webp: { quality: 85 },
     }),
+    viteCompression({ algorithm: "gzip" }),
+    viteCompression({ algorithm: "brotliCompress" }),
   ],
   server: {
     open: true,

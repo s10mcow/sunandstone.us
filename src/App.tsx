@@ -1,8 +1,9 @@
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { LoadingScreen } from "@/components/LoadingScreen";
-import EmailSourceModal from "@/components/EmailSourceModal";
-import QRSourceModal from "@/components/QRSourceModal";
 import HomePage from "@/pages/Landing/Landing";
+
+const QRSourceModal = lazy(() => import("@/components/QRSourceModal"));
+const EmailSourceModal = lazy(() => import("@/components/EmailSourceModal"));
 
 export default function App() {
   return (
