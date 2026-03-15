@@ -64,6 +64,16 @@ function CTASection() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+
+    const name = data.get("name")?.toString().trim();
+    const email = data.get("email")?.toString().trim();
+    const phone = data.get("phone")?.toString().trim();
+
+    if (!name || !email || !phone) {
+      alert("Please fill in all required fields (name, email, and phone).");
+      return;
+    }
+
     setLoading(true);
     fetch("/", {
       method: "POST",
