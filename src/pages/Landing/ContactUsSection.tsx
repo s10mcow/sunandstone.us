@@ -1,4 +1,5 @@
 import ContactModal from "@/components/ContactModal";
+import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/constants/social";
 import styled from "@emotion/styled";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import { useState } from "react";
@@ -90,6 +91,19 @@ function ContactUsSection() {
                   aria-label="Fax San and Stone"
                 >
                   Fax: (386) 309-2342
+                </PhoneLine>
+                <PhoneLine
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit Sten Muchow on Instagram"
+                  onClick={() =>
+                    window.gtag?.("event", "instagram_click", {
+                      location: "contact",
+                    })
+                  }
+                >
+                  Instagram: {INSTAGRAM_HANDLE}
                 </PhoneLine>
                 <AddressLine>PO Box 1242</AddressLine>
                 <AddressLine>Flagler Beach, FL 32136</AddressLine>

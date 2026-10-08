@@ -1,3 +1,4 @@
+import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/constants/social";
 import { ExpandMore } from "@mui/icons-material";
 import {
   Accordion,
@@ -245,6 +246,27 @@ function FAQSection() {
                   sx={{ fontSize: { xs: "0.85rem", sm: "1rem" } }}
                 >
                   📞 <strong>Phone:</strong> (904) 325-6275
+                </Typography>
+                <Typography
+                  variant="body1"
+                  component="a"
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit Sten Muchow on Instagram"
+                  onClick={() =>
+                    window.gtag?.("event", "instagram_click", {
+                      location: "faq",
+                    })
+                  }
+                  sx={{
+                    fontSize: { xs: "0.85rem", sm: "1rem" },
+                    color: "inherit",
+                    textDecoration: "none",
+                    "&:hover": { textDecoration: "underline" },
+                  }}
+                >
+                  <strong>Instagram:</strong> {INSTAGRAM_HANDLE}
                 </Typography>
               </Box>
             </Box>

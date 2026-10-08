@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/constants/social";
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
@@ -53,10 +54,30 @@ const Footer = () => {
             <Typography variant="body2" sx={{ mb: 1 }}>
               📠 (386) 309-2342
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2" sx={{ mb: 1 }}>
               📍 PO Box 1242
               <br />
               Flagler Beach, FL 32136
+            </Typography>
+            <Typography
+              variant="body2"
+              component="a"
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Sten Muchow on Instagram"
+              onClick={() =>
+                window.gtag?.("event", "instagram_click", {
+                  location: "footer",
+                })
+              }
+              sx={{
+                color: "inherit",
+                textDecoration: "none",
+                "&:hover": { textDecoration: "underline" },
+              }}
+            >
+              Instagram: {INSTAGRAM_HANDLE}
             </Typography>
           </Box>
 

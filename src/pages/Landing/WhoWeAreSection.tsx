@@ -1,5 +1,5 @@
 import sten from "@assets/images/sten.jpg";
-import { LinkedIn } from "@mui/icons-material";
+import { Instagram, LinkedIn } from "@mui/icons-material";
 import {
   Avatar,
   Box,
@@ -11,6 +11,7 @@ import {
   Link,
   Typography,
 } from "@mui/material";
+import { INSTAGRAM_URL, LINKEDIN_URL } from "@/constants/social";
 import { SectionContainer } from "./styles";
 
 function WhoWeAreSection() {
@@ -86,7 +87,7 @@ function WhoWeAreSection() {
                       </CardContent>
                       <Box display="flex" justifyContent="center" sx={{ p: 1 }}>
                         <Link
-                          href="https://www.linkedin.com/in/stenmuchow"
+                          href={LINKEDIN_URL}
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="Visit Sten Muchow's LinkedIn profile"
@@ -96,6 +97,24 @@ function WhoWeAreSection() {
                             size="large"
                           >
                             <LinkedIn />
+                          </IconButton>
+                        </Link>
+                        <Link
+                          href={INSTAGRAM_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Visit Sten Muchow's Instagram profile"
+                          onClick={() =>
+                            window.gtag?.("event", "instagram_click", {
+                              location: "team",
+                            })
+                          }
+                        >
+                          <IconButton
+                            aria-label="Instagram profile"
+                            size="large"
+                          >
+                            <Instagram />
                           </IconButton>
                         </Link>
                       </Box>
